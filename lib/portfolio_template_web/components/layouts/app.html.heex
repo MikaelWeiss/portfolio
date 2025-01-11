@@ -1,7 +1,15 @@
-<div class="min-h-screen flex flex-col bg-gradient-to-b from-background-primary-light via-background-primary-light to-background-secondary-light dark:from-background-primary-dark dark:via-background-primary-dark dark:to-background-secondary-dark transition-colors duration-300">
+<div class="min-h-screen flex flex-col">
+  <%!-- Background with overlay --%>
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-br from-background-primary-light via-background-secondary-light to-background-tertiary-light dark:from-background-primary-dark dark:via-background-secondary-dark dark:to-background-tertiary-dark transition-colors duration-700"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.03),transparent_50%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.1),transparent_50%)] dark:bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.03),transparent_50%)]"></div>
+  </div>
+
   <%!-- Header/Navbar --%>
-  <header class="sticky top-0 bg-background-primary-light/70 dark:bg-background-primary-dark/70 backdrop-blur-md z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+  <header class="sticky top-0 z-50">
+    <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background-primary-light/90 to-background-primary-light/0 dark:from-background-primary-dark/90 dark:to-background-primary-dark/0 backdrop-blur-md"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center justify-between h-20">
         <%!-- Logo/Name --%>
         <div class="flex-shrink-0">
@@ -83,7 +91,7 @@
       </nav>
 
       <%!-- Mobile Navigation Menu --%>
-      <div class="mobile-menu hidden md:hidden absolute top-full left-0 right-0 mt-2 mx-4 p-2 bg-background-primary-light dark:bg-background-primary-dark rounded-2xl shadow-xl dark:shadow-zinc-900/30 border border-border-light/10 dark:border-border-light-dark/10 transform origin-top transition-all duration-300">
+      <div class="mobile-menu hidden md:hidden absolute top-full left-0 right-0 mt-2 mx-4 p-2 bg-background-primary-light/95 dark:bg-background-primary-dark/95 backdrop-blur-md rounded-2xl shadow-xl dark:shadow-zinc-900/30 border border-border-light/10 dark:border-border-light-dark/10 transform origin-top transition-all duration-300">
         <div class="py-2 space-y-1">
           <a href="/" class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if @conn.request_path == "/" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
             Home
@@ -106,8 +114,9 @@
   </main>
 
   <%!-- Footer --%>
-  <footer class="bg-background-primary-light/70 dark:bg-background-primary-dark/70 backdrop-blur-md w-full">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <footer class="relative mt-auto w-full">
+    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background-primary-light/90 to-background-primary-light/0 dark:from-background-primary-dark/90 dark:to-background-primary-dark/0 backdrop-blur-md"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark hover:text-text-secondary-light dark:hover:text-text-secondary-dark transition-colors">
           © <%= DateTime.utc_now().year %> Your Name. All rights reserved.
