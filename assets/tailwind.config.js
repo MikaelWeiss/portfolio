@@ -47,9 +47,9 @@ module.exports = {
         },
         // Brand Colors
         brand: {
-          DEFAULT: '#4F46E5',
-          dark: '#4338CA',
-          light: '#818CF8'
+          DEFAULT: '#2563EB',
+          dark: '#1D4ED8',
+          light: '#3B82F6'
         },
         // Accent Colors
         accent: {
