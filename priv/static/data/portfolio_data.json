@@ -1,8 +1,8 @@
 {
   "personal": {
     "name": "Mikael Weiss",
-    "title": "iOS, Web, and AI Developer",
-    "expertise": ["Xcode", "SwiftUI", "Phoenix", "Elixir"],
+    "title": "App Developer • Entrepreneur • Pilot • Builder • Engineer",
+    "expertise": ["Swift", "SwiftData", "SwiftUI", "UIKit"],
     "images": {
       "profile": "/images/profile.jpg",
       "about": "/images/about.jpg"
@@ -10,8 +10,8 @@
     "social_links": {
       "facebook": "#",
       "twitter": "#",
-      "linkedin": "#",
-      "github": "#"
+      "linkedin": "LinkedIn",
+      "github": "github.com/MikaelWeiss"
     }
   },
   "navigation": {
@@ -31,14 +31,14 @@
     ]
   },
   "about": {
-    "description": "I'm a passionate Full Stack Developer with 5+ years of experience building modern web applications. I specialize in creating beautiful, performant, and user-friendly experiences.",
+    "description": "App Developer, Entrepreneur, Pilot, Builder, Engineer, Reader, Climber, and Outdoor Enthusiast with experience in iOS development and entrepreneurship.",
     "stats": [
       {
-        "value": "3+",
+        "value": "2+",
         "label": "Years Experience"
       },
       {
-        "value": "25+",
+        "value": "7+",
         "label": "Projects Completed"
       }
     ]
@@ -49,13 +49,13 @@
       "items": [
         {
           "name": "SwiftUI",
-          "years": "3 years",
-          "proficiency": 95
+          "years": "2 years",
+          "proficiency": 90
         },
         {
-          "name": "Elixir/Phoenix",
-          "years": "1 years",
-          "proficiency": 90
+          "name": "UIKit",
+          "years": "2 years",
+          "proficiency": 85
         }
       ]
     },
@@ -63,82 +63,84 @@
       "title": "Backend Development",
       "items": [
         {
-          "name": "Elixir/Phoenix",
-          "years": "3 years",
-          "proficiency": 85
+          "name": "C#",
+          "years": "1 year",
+          "proficiency": 80
         },
         {
-          "name": "Node.js",
-          "years": "5 years",
-          "proficiency": 95
+          "name": "MySQL",
+          "years": "1 year",
+          "proficiency": 80
         }
       ]
     },
     "other": {
       "title": "Other Skills",
-      "items": ["Git", "Docker", "AWS", "UI/UX", "Agile"]
+      "items": ["Git", "GitHub", "SwiftData", "Combine", "Xcode", "Architecture", "Spanish"]
     }
   },
   "experience": [
     {
-      "title": "Senior Full Stack Developer",
-      "company": "Tech Corp Inc.",
-      "period": "2020 - Present",
+      "title": "Chief Executive Officer & Lead Developer",
+      "company": "Weiss Solutions LLC",
+      "period": "Oct 2023 - Current",
       "description": [
-        "Led development of enterprise web applications",
-        "Managed team of 5 developers"
+        "Built 'Sherpa' iOS app from ground zero to App Store in 2 months",
+        "Created a system for quickly building iOS apps with good architecture",
+        "Applied state-of-the-art API's including SwiftUI and SwiftData"
       ],
-      "technologies": ["React", "Node.js", "AWS"]
+      "technologies": ["SwiftUI", "SwiftData", "iOS"]
     },
     {
-      "title": "Full Stack Developer",
-      "company": "Startup XYZ",
-      "period": "2018 - 2020",
+      "title": "iOS App Developer",
+      "company": "Elements Financial",
+      "period": "Aug 2020 - Jun 2021",
       "description": [
-        "Built and maintained multiple client projects",
-        "Implemented CI/CD pipelines"
+        "Cooperated with other developers to separate and perform tasks based on priorities",
+        "Collaborated with a cross-functional team, including designers and full-stack developers",
+        "Resolved a set of 56 bugs in the span of a month as estimated"
       ],
-      "technologies": ["Vue.js", "Python", "Docker"]
+      "technologies": ["Swift", "iOS", "UIKit"]
     }
   ],
   "projects": {
     "featured": [
       {
-        "title": "E-commerce Platform",
-        "category": "Web App",
+        "title": "Sherpa",
+        "category": "iOS App",
         "image": "/images/project1.jpg",
-        "description": "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management, secure payments, and an intuitive admin dashboard.",
-        "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
+        "description": "Built from ground zero to App Store in 2 months",
+        "technologies": ["SwiftUI", "SwiftData", "iOS"],
         "links": {
           "live": "#"
         }
       },
       {
-        "title": "Social Media Dashboard",
-        "category": "UI/UX",
+        "title": "Pastimes",
+        "category": "iOS App",
         "image": "/images/project2.jpg",
-        "description": "A comprehensive dashboard for social media management with real-time analytics, scheduling capabilities, and AI-powered content suggestions.",
-        "technologies": ["Vue.js", "TypeScript", "Tailwind CSS", "Chart.js"],
+        "description": "Contract work application developed at Weiss Solutions LLC",
+        "technologies": ["SwiftUI", "iOS", "SwiftData"],
         "links": {
           "live": "#"
         }
       },
       {
-        "title": "AI Chat Application",
-        "category": "Web App",
+        "title": "Giveaway",
+        "category": "iOS App",
         "image": "/images/project3.jpg",
-        "description": "A real-time chat application enhanced with AI capabilities for automated responses, sentiment analysis, and language translation.",
-        "technologies": ["Python", "TensorFlow", "WebSocket", "Docker"],
+        "description": "Contract work application developed at Weiss Solutions LLC",
+        "technologies": ["SwiftUI", "iOS", "SwiftData"],
         "links": {
           "live": "#"
         }
       },
       {
-        "title": "Fitness Tracking App",
-        "category": "Mobile",
+        "title": "LMS",
+        "category": "iOS App",
         "image": "/images/project4.jpg",
-        "description": "A comprehensive mobile app for tracking workouts, nutrition, and progress with personalized recommendations and social features.",
-        "technologies": ["React Native", "Firebase", "Redux", "HealthKit"],
+        "description": "Contract work application developed at Weiss Solutions LLC",
+        "technologies": ["SwiftUI", "iOS", "SwiftData"],
         "links": {
           "live": "#"
         }
@@ -146,22 +148,22 @@
     ],
     "all": [
       {
-        "title": "Project Management Tool",
-        "category": "Web App",
+        "title": "Inventory",
+        "category": "iOS App",
         "image": "/images/project5.jpg",
-        "description": "A collaborative project management tool with real-time updates, task tracking, and team communication features.",
-        "technologies": ["Angular", "Firebase", "RxJS", "Material UI"],
+        "description": "Personal work application developed at Weiss Solutions LLC",
+        "technologies": ["SwiftUI", "iOS", "SwiftData"],
         "links": {
           "live": "#",
           "github": "#"
         }
       },
       {
-        "title": "Weather Forecast App",
-        "category": "Mobile",
+        "title": "Strive",
+        "category": "iOS App",
         "image": "/images/project6.jpg",
-        "description": "A beautiful weather application with detailed forecasts, radar maps, and severe weather alerts.",
-        "technologies": ["Swift", "CoreLocation", "MapKit", "WeatherKit"],
+        "description": "Personal work application developed at Weiss Solutions LLC",
+        "technologies": ["SwiftUI", "iOS", "SwiftData"],
         "links": {
           "live": "#",
           "github": "#"
@@ -171,56 +173,29 @@
   },
   "awards": [
     {
-      "title": "Best Web App Award",
-      "year": "2023",
-      "description": "Recognized for exceptional design and functionality in web application development.",
+      "title": "Eagle Scout",
+      "year": "2019",
+      "description": "Assembled and delivered pillow kits for children at Children's Hospital, organizing an event with 60 volunteers",
       "icon": "trophy"
-    },
-    {
-      "title": "Innovation Excellence",
-      "year": "2022",
-      "description": "Awarded for innovative solutions in mobile app development and AI integration.",
-      "icon": "star"
-    },
-    {
-      "title": "Top Developer Award",
-      "year": "2021",
-      "description": "Recognized as one of the top developers in the industry for technical excellence.",
-      "icon": "academic-cap"
     }
   ],
   "volunteer": [
     {
-      "title": "Tech Mentor",
-      "organization": "Code for Good",
-      "period": "2022 - Present",
-      "description": "Mentoring aspiring developers and helping them build technical skills through hands-on projects and workshops.",
-      "tags": ["Teaching", "Web Development", "Mentoring"],
+      "title": "LDS Church Missionary",
+      "organization": "LDS Church",
+      "period": "Oct 2021 - Oct 2023",
+      "description": "Collaborated with diverse populations in Kansas, Colorado, and Oklahoma, providing support and promoting cultural understanding while leading a small group of missionaries",
+      "tags": ["Spanish", "Leadership", "Cultural Understanding"],
       "icon": "heart"
-    },
-    {
-      "title": "Technical Lead",
-      "organization": "Developers Without Borders",
-      "period": "2021 - 2022",
-      "description": "Led a team of volunteer developers in building web applications for non-profit organizations.",
-      "tags": ["Leadership", "Non-profit", "Project Management"],
-      "icon": "globe-alt"
     }
   ],
   "education": [
     {
-      "degree": "Master of Science in Computer Science",
-      "school": "Stanford University",
-      "period": "2018 - 2020",
-      "description": "Specialized in Artificial Intelligence and Machine Learning with a focus on Natural Language Processing.",
-      "tags": ["AI/ML", "NLP", "Research"]
-    },
-    {
-      "degree": "Bachelor of Science in Computer Engineering",
-      "school": "MIT",
-      "period": "2014 - 2018",
-      "description": "Graduated with honors. Focused on software engineering and computer architecture.",
-      "tags": ["Software Engineering", "Computer Architecture", "Algorithms"]
+      "degree": "Computer Science",
+      "school": "Brigham Young University - Idaho",
+      "period": "Jan 2024 - May 2027",
+      "description": "Currently pursuing degree with a 3.9 GPA. Coursework includes C#, Electronic Systems, MySQL, and Web Development",
+      "tags": ["C#", "MySQL", "Web Development", "HTML", "CSS"]
     }
   ]
-} 
+}
