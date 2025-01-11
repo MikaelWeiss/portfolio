@@ -96,7 +96,7 @@
       "period": "Oct 2023 - Current",
       "description": [
         "Built 'Sherpa' iOS app from ground zero to App Store in 2 months",
-        "Created a system for quickly building iOS apps with good architecture",
+        "Co-developed a system for quickly building iOS apps with good architecture",
         "Applied state-of-the-art API's including SwiftUI and SwiftData"
       ],
       "technologies": ["SwiftUI", "SwiftData", "iOS"]
