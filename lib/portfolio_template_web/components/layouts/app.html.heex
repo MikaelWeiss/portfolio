@@ -1,25 +1,25 @@
-<div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+<div class="min-h-screen bg-background-primary-light dark:bg-background-primary-dark transition-colors duration-300">
   <%!-- Header/Navbar --%>
-  <header class="sticky top-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
+  <header class="sticky top-0 bg-background-primary-light/80 dark:bg-background-primary-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-light-dark">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex items-center justify-between h-16">
         <%!-- Logo/Name --%>
         <div class="flex-shrink-0">
-          <a href="/" class="text-xl font-bold text-gray-900 dark:text-white">
+          <a href="/" class="text-xl font-bold text-text-primary-light dark:text-text-primary-dark">
             Your Name
           </a>
         </div>
 
         <%!-- Navigation Links --%>
         <div class="hidden md:block">
-          <div class="flex items-center p-1 bg-gray-800/50 dark:bg-gray-800 rounded-full backdrop-blur-sm">
-            <a href="/" class={"px-6 py-2 text-white rounded-full transition-colors #{if @conn.request_path == "/" do "bg-purple-600" end}"}>
+          <div class="flex items-center p-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full backdrop-blur-sm">
+            <a href="/" class={"px-6 py-2 rounded-full transition-colors #{if @conn.request_path == "/" do "bg-brand text-white" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
               Home
             </a>
-            <a href="/works" class={"px-6 py-2 text-white rounded-full transition-colors #{if @conn.request_path == "/works" do "bg-purple-600" end}"}>
+            <a href="/works" class={"px-6 py-2 rounded-full transition-colors #{if @conn.request_path == "/works" do "bg-brand text-white" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
               Work
             </a>
-            <a href="/about" class={"px-6 py-2 text-white rounded-full transition-colors #{if @conn.request_path == "/about" do "bg-purple-600" end}"}>
+            <a href="/about" class={"px-6 py-2 rounded-full transition-colors #{if @conn.request_path == "/about" do "bg-brand text-white" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
               About
             </a>
           </div>
@@ -29,7 +29,7 @@
         <div class="flex items-center">
           <button
             type="button"
-            class="theme-toggle p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 dark:focus:ring-gray-600"
+            class="theme-toggle p-2 text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark rounded-lg focus:outline-none focus:ring-2 focus:ring-border-medium dark:focus:ring-border-medium-dark"
             aria-label="Toggle theme"
           >
             <%!-- Sun icon (shown in dark mode) --%>
@@ -65,9 +65,9 @@
   </main>
 
   <%!-- Footer --%>
-  <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+  <footer class="bg-background-primary-light dark:bg-background-primary-dark border-t border-border-light dark:border-border-light-dark">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <p class="text-center text-sm text-gray-600 dark:text-gray-400">
+      <p class="text-center text-sm text-text-tertiary-light dark:text-text-tertiary-dark">
         © <%= DateTime.utc_now().year %> Your Name. All rights reserved.
       </p>
     </div>

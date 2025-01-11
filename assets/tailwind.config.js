@@ -15,7 +15,64 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: "#FD4F00",
+        // Background Colors
+        background: {
+          primary: {
+            light: '#FFFFFF',
+            dark: '#111827'
+          },
+          secondary: {
+            light: '#F9FAFB',
+            dark: '#1F2937'
+          },
+          tertiary: {
+            light: '#F3F4F6',
+            dark: '#374151'
+          }
+        },
+        // Text Colors
+        text: {
+          primary: {
+            light: '#111827',
+            dark: '#F9FAFB'
+          },
+          secondary: {
+            light: '#4B5563',
+            dark: '#E5E7EB'
+          },
+          tertiary: {
+            light: '#6B7280',
+            dark: '#D1D5DB'
+          }
+        },
+        // Brand Colors
+        brand: {
+          DEFAULT: '#4F46E5',
+          dark: '#4338CA',
+          light: '#818CF8'
+        },
+        // Accent Colors
+        accent: {
+          DEFAULT: '#EC4899',
+          dark: '#DB2777',
+          light: '#F472B6'
+        },
+        // Border Colors
+        border: {
+          light: {
+            DEFAULT: '#E5E7EB',
+            dark: '#374151'
+          },
+          medium: {
+            DEFAULT: '#D1D5DB',
+            dark: '#4B5563'
+          }
+        },
+        // Utility Colors
+        utility: {
+          success: '#10B981',
+          error: '#EF4444'
+        }
       }
     },
   },
