@@ -11,6 +11,7 @@ module.exports = {
     "../lib/portfolio_template_web.ex",
     "../lib/portfolio_template_web/**/*.*ex"
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
