@@ -1,1 +1,440 @@
-This is the home page.
+<%!-- Hero Section --%>
+<section id="hero" class="min-h-[5vh] flex items-start pt-32 pb-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <div class="flex-1 text-center lg:text-left">
+        <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-brand via-accent to-brand bg-clip-text text-transparent animate-gradient">
+          Your Name
+        </h1>
+        <p class="mt-4 text-xl text-text-secondary-light dark:text-text-secondary-dark">
+          Full Stack Developer & UI/UX Designer
+        </p>
+        <div class="mt-6 flex justify-center lg:justify-start gap-4">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-background-tertiary-light dark:bg-background-tertiary-dark hover:bg-brand hover:text-white transition-all duration-300"
+          >
+            <.icon name="hero-code-bracket" class="w-5 h-5" />
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-background-tertiary-light dark:bg-background-tertiary-dark hover:bg-brand hover:text-white transition-all duration-300"
+          >
+            <.icon name="hero-link" class="w-5 h-5" />
+            LinkedIn
+          </a>
+        </div>
+        <div class="mt-8 h-8 text-lg text-text-secondary-light dark:text-text-secondary-dark typing-text">
+          Expert in: React, Phoenix, TypeScript, Elixir
+        </div>
+      </div>
+      <div class="flex-1 relative">
+        <div class="relative w-64 h-64 mx-auto">
+          <div class="absolute inset-0 bg-gradient-to-r from-brand to-accent rounded-full animate-pulse opacity-20"></div>
+          <img
+            src="/images/profile.jpg"
+            alt="Profile"
+            class="relative z-10 w-full h-full object-cover rounded-full border-4 border-background-tertiary-light dark:border-background-tertiary-dark"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%!-- About Section --%>
+<section id="about" class="py-20 scroll-mt-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+      About Me
+    </h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <p class="text-lg text-text-secondary-light dark:text-text-secondary-dark">
+          I'm a passionate Full Stack Developer with 5+ years of experience building modern web applications. I specialize in creating beautiful, performant, and user-friendly experiences.
+        </p>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="p-4 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+            <div class="text-3xl font-bold text-brand">5+</div>
+            <div class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark">Years Experience</div>
+          </div>
+          <div class="p-4 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+            <div class="text-3xl font-bold text-accent">50+</div>
+            <div class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark">Projects Completed</div>
+          </div>
+        </div>
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-brand text-white rounded-full hover:bg-brand-dark transition-colors duration-300"
+        >
+          <.icon name="hero-document-arrow-down" class="w-5 h-5" />
+          Download Resume
+        </a>
+      </div>
+      <div class="relative">
+        <div class="aspect-square rounded-2xl overflow-hidden">
+          <img
+            src="/images/about.jpg"
+            alt="About Me"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute -bottom-6 -right-6 -z-10 w-full h-full bg-gradient-to-br from-brand to-accent rounded-2xl opacity-20"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%!-- Skills Section --%>
+<section id="skills" class="py-20 scroll-mt-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+      Skills & Expertise
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <%!-- Frontend Skills --%>
+      <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+        <h3 class="text-xl font-semibold mb-4">Frontend Development</h3>
+        <div class="space-y-4">
+          <div class="skill-item">
+            <div class="flex justify-between mb-1">
+              <span>React</span>
+              <span>5 years</span>
+            </div>
+            <div class="h-2 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full overflow-hidden">
+              <div class="h-full bg-brand w-[95%] rounded-full"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="flex justify-between mb-1">
+              <span>TypeScript</span>
+              <span>4 years</span>
+            </div>
+            <div class="h-2 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full overflow-hidden">
+              <div class="h-full bg-brand w-[90%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%!-- Backend Skills --%>
+      <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+        <h3 class="text-xl font-semibold mb-4">Backend Development</h3>
+        <div class="space-y-4">
+          <div class="skill-item">
+            <div class="flex justify-between mb-1">
+              <span>Elixir/Phoenix</span>
+              <span>3 years</span>
+            </div>
+            <div class="h-2 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full overflow-hidden">
+              <div class="h-full bg-brand w-[85%] rounded-full"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="flex justify-between mb-1">
+              <span>Node.js</span>
+              <span>5 years</span>
+            </div>
+            <div class="h-2 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full overflow-hidden">
+              <div class="h-full bg-brand w-[95%] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%!-- Other Skills --%>
+      <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+        <h3 class="text-xl font-semibold mb-4">Other Skills</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-sm">Git</span>
+          <span class="px-3 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-sm">Docker</span>
+          <span class="px-3 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-sm">AWS</span>
+          <span class="px-3 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-sm">UI/UX</span>
+          <span class="px-3 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-sm">Agile</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%!-- Experience Section --%>
+<section id="experience" class="py-20 scroll-mt-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+      Work Experience
+    </h2>
+    <div class="relative">
+      <%!-- Timeline Line --%>
+      <div class="absolute left-0 md:left-1/2 h-full w-px bg-border-light dark:bg-border-light-dark transform -translate-x-1/2"></div>
+      
+      <%!-- Timeline Items --%>
+      <div class="space-y-12">
+        <%!-- Experience 1 --%>
+        <div class="relative flex flex-col md:flex-row items-center md:justify-between group">
+          <div class="flex-1 w-full md:w-[45%] md:text-right order-2 md:order-1">
+            <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+              <h3 class="text-xl font-semibold">Senior Full Stack Developer</h3>
+              <p class="text-text-secondary-light dark:text-text-secondary-dark">Tech Corp Inc.</p>
+              <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark">2020 - Present</p>
+              <div class="mt-4 space-y-2">
+                <p>Led development of enterprise web applications</p>
+                <p>Managed team of 5 developers</p>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">React</span>
+                <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Node.js</span>
+                <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">AWS</span>
+              </div>
+            </div>
+          </div>
+          <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-brand rounded-full transform -translate-x-1/2 flex items-center justify-center order-1 md:order-2">
+            <.icon name="hero-briefcase" class="w-4 h-4 text-white" />
+          </div>
+          <div class="flex-1 w-full md:w-[45%] order-3"></div>
+        </div>
+
+        <%!-- Experience 2 --%>
+        <div class="relative flex flex-col md:flex-row items-center md:justify-between group">
+          <div class="flex-1 w-full md:w-[45%] order-2"></div>
+          <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-brand rounded-full transform -translate-x-1/2 flex items-center justify-center order-1">
+            <.icon name="hero-briefcase" class="w-4 h-4 text-white" />
+          </div>
+          <div class="flex-1 w-full md:w-[45%] order-3">
+            <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+              <h3 class="text-xl font-semibold">Full Stack Developer</h3>
+              <p class="text-text-secondary-light dark:text-text-secondary-dark">Startup XYZ</p>
+              <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark">2018 - 2020</p>
+              <div class="mt-4 space-y-2">
+                <p>Built and maintained multiple client projects</p>
+                <p>Implemented CI/CD pipelines</p>
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Vue.js</span>
+                <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Python</span>
+                <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Docker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%!-- Featured Works Section --%>
+<section id="works" class="py-20 scroll-mt-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+      Featured Works
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <%!-- Project 1 --%>
+      <div class="group relative bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl overflow-hidden">
+        <div class="aspect-video">
+          <img
+            src="/images/project1.jpg"
+            alt="Project 1"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
+          <p class="text-text-secondary-light dark:text-text-secondary-dark mb-4">
+            A modern e-commerce platform built with React and Node.js
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">React</span>
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Node.js</span>
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">MongoDB</span>
+          </div>
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
+          >
+            View Project
+            <.icon name="hero-arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+
+      <%!-- Project 2 --%>
+      <div class="group relative bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl overflow-hidden">
+        <div class="aspect-video">
+          <img
+            src="/images/project2.jpg"
+            alt="Project 2"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Social Media Dashboard</h3>
+          <p class="text-text-secondary-light dark:text-text-secondary-dark mb-4">
+            Analytics dashboard for social media management
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Vue.js</span>
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Python</span>
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">PostgreSQL</span>
+          </div>
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
+          >
+            View Project
+            <.icon name="hero-arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+
+      <%!-- Project 3 --%>
+      <div class="group relative bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl overflow-hidden">
+        <div class="aspect-video">
+          <img
+            src="/images/project3.jpg"
+            alt="Project 3"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">AI Chat Application</h3>
+          <p class="text-text-secondary-light dark:text-text-secondary-dark mb-4">
+            Real-time chat app with AI-powered features
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">React</span>
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Python</span>
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">TensorFlow</span>
+          </div>
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
+          >
+            View Project
+            <.icon name="hero-arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+
+      <%!-- Project 4 --%>
+      <div class="group relative bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl overflow-hidden">
+        <div class="aspect-video">
+          <img
+            src="/images/project4.jpg"
+            alt="Project 4"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Fitness Tracking App</h3>
+          <p class="text-text-secondary-light dark:text-text-secondary-dark mb-4">
+            Mobile-first fitness tracking application
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">React Native</span>
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Node.js</span>
+            <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs">Firebase</span>
+          </div>
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
+          >
+            View Project
+            <.icon name="hero-arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="/works"
+        class="inline-flex items-center gap-2 px-8 py-3 bg-brand text-white rounded-full hover:bg-brand-dark transition-colors duration-300"
+      >
+        View All Works
+        <.icon name="hero-arrow-right" class="w-5 h-5" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<%!-- Add required styles --%>
+<style>
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 8s linear infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-while-typing {
+    0%, 50% { border-right-color: currentColor; }
+    51%, 100% { border-right-color: transparent; }
+  }
+
+  @keyframes cursor-fade-out {
+    0% { border-right-color: currentColor; }
+    100% { border-right-color: transparent; }
+  }
+
+  .typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 0;
+    animation: 
+      typing 3.5s steps(40, end) forwards,
+      blink-while-typing 0.75s step-end infinite 0s,
+      cursor-fade-out 0.75s ease-out 3.5s forwards;
+  }
+</style>
+
+<%!-- Add smooth scroll behavior --%>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach((section) => {
+      section.classList.add('transform', 'transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+      observer.observe(section);
+    });
+  });
+</script>
