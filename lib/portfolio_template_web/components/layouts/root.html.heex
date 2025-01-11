@@ -8,6 +8,16 @@
       <%= assigns[:page_title] || "PortfolioTemplate" %>
     </.live_title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+    <script>
+      // Immediately set the theme before the page loads
+      let theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
   </head>
