@@ -139,28 +139,51 @@
       <%!-- Timeline Items --%>
       <div class="space-y-12">
         <%= for {exp, index} <- Enum.with_index(@experience) do %>
-          <div class="relative flex flex-col md:flex-row items-center md:justify-between group">
-            <div class={"flex-1 w-full md:w-[45%] #{if rem(index, 2) == 0, do: "md:text-right order-2 md:order-1", else: "order-2"}"}>
-              <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
-                <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp["title"] %></h3>
-                <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp["company"] %></p>
-                <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp["period"] %></p>
-                <div class="mt-4 space-y-2">
-                  <%= for desc <- exp["description"] do %>
-                    <p class="text-text-primary-light dark:text-text-primary-dark"><%= desc %></p>
-                  <% end %>
+          <div class="relative flex flex-col md:flex-row items-center md:items-start group">
+            <%!-- Left side content --%>
+            <div class={"w-full md:w-[45%] #{if rem(index, 2) == 0, do: "", else: "md:hidden"}"}>
+              <%= if rem(index, 2) == 0 do %>
+                <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp["title"] %></h3>
+                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp["company"] %></p>
+                  <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp["period"] %></p>
+                  <div class="mt-4 space-y-2">
+                    <%= for desc <- exp["description"] do %>
+                      <p class="text-text-primary-light dark:text-text-primary-dark"><%= desc %></p>
+                    <% end %>
+                  </div>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <%= for tech <- exp["technologies"] do %>
+                      <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
+                    <% end %>
+                  </div>
                 </div>
-                <div class="mt-4 flex flex-wrap gap-2">
-                  <%= for tech <- exp["technologies"] do %>
-                    <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
-                  <% end %>
-                </div>
-              </div>
+              <% end %>
             </div>
-            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-brand rounded-full transform -translate-x-1/2 flex items-center justify-center order-1 md:order-2">
+            <%!-- Timeline dot --%>
+            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-brand rounded-full transform -translate-x-1/2 flex items-center justify-center">
               <.icon name="hero-briefcase" class="w-4 h-4 text-white" />
             </div>
-            <div class="flex-1 w-full md:w-[45%] order-3"></div>
+            <%!-- Right side content --%>
+            <div class={"w-full md:w-[45%] md:ml-auto #{if rem(index, 2) == 0, do: "md:hidden", else: ""}"}>
+              <%= if rem(index, 2) != 0 do %>
+                <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp["title"] %></h3>
+                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp["company"] %></p>
+                  <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp["period"] %></p>
+                  <div class="mt-4 space-y-2">
+                    <%= for desc <- exp["description"] do %>
+                      <p class="text-text-primary-light dark:text-text-primary-dark"><%= desc %></p>
+                    <% end %>
+                  </div>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    <%= for tech <- exp["technologies"] do %>
+                      <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
           </div>
         <% end %>
       </div>
