@@ -1,0 +1,226 @@
+{
+  "personal": {
+    "name": "Mikael Weiss",
+    "title": "iOS, Web, and AI Developer",
+    "expertise": ["Xcode", "SwiftUI", "Phoenix", "Elixir"],
+    "images": {
+      "profile": "/images/profile.jpg",
+      "about": "/images/about.jpg"
+    },
+    "social_links": {
+      "facebook": "#",
+      "twitter": "#",
+      "linkedin": "#",
+      "github": "#"
+    }
+  },
+  "navigation": {
+    "logo": {
+      "text": "Mikael Weiss",
+      "link": "/"
+    },
+    "links": [
+      {
+        "text": "Home",
+        "path": "/"
+      },
+      {
+        "text": "Work",
+        "path": "/works"
+      }
+    ]
+  },
+  "about": {
+    "description": "I'm a passionate Full Stack Developer with 5+ years of experience building modern web applications. I specialize in creating beautiful, performant, and user-friendly experiences.",
+    "stats": [
+      {
+        "value": "3+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "25+",
+        "label": "Projects Completed"
+      }
+    ]
+  },
+  "skills": {
+    "frontend": {
+      "title": "iOS Development",
+      "items": [
+        {
+          "name": "SwiftUI",
+          "years": "3 years",
+          "proficiency": 95
+        },
+        {
+          "name": "Elixir/Phoenix",
+          "years": "1 years",
+          "proficiency": 90
+        }
+      ]
+    },
+    "backend": {
+      "title": "Backend Development",
+      "items": [
+        {
+          "name": "Elixir/Phoenix",
+          "years": "3 years",
+          "proficiency": 85
+        },
+        {
+          "name": "Node.js",
+          "years": "5 years",
+          "proficiency": 95
+        }
+      ]
+    },
+    "other": {
+      "title": "Other Skills",
+      "items": ["Git", "Docker", "AWS", "UI/UX", "Agile"]
+    }
+  },
+  "experience": [
+    {
+      "title": "Senior Full Stack Developer",
+      "company": "Tech Corp Inc.",
+      "period": "2020 - Present",
+      "description": [
+        "Led development of enterprise web applications",
+        "Managed team of 5 developers"
+      ],
+      "technologies": ["React", "Node.js", "AWS"]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Startup XYZ",
+      "period": "2018 - 2020",
+      "description": [
+        "Built and maintained multiple client projects",
+        "Implemented CI/CD pipelines"
+      ],
+      "technologies": ["Vue.js", "Python", "Docker"]
+    }
+  ],
+  "projects": {
+    "featured": [
+      {
+        "title": "E-commerce Platform",
+        "category": "Web App",
+        "image": "/images/project1.jpg",
+        "description": "A modern e-commerce platform built with React and Node.js, featuring real-time inventory management, secure payments, and an intuitive admin dashboard.",
+        "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
+        "links": {
+          "live": "#"
+        }
+      },
+      {
+        "title": "Social Media Dashboard",
+        "category": "UI/UX",
+        "image": "/images/project2.jpg",
+        "description": "A comprehensive dashboard for social media management with real-time analytics, scheduling capabilities, and AI-powered content suggestions.",
+        "technologies": ["Vue.js", "TypeScript", "Tailwind CSS", "Chart.js"],
+        "links": {
+          "live": "#"
+        }
+      },
+      {
+        "title": "AI Chat Application",
+        "category": "Web App",
+        "image": "/images/project3.jpg",
+        "description": "A real-time chat application enhanced with AI capabilities for automated responses, sentiment analysis, and language translation.",
+        "technologies": ["Python", "TensorFlow", "WebSocket", "Docker"],
+        "links": {
+          "live": "#"
+        }
+      },
+      {
+        "title": "Fitness Tracking App",
+        "category": "Mobile",
+        "image": "/images/project4.jpg",
+        "description": "A comprehensive mobile app for tracking workouts, nutrition, and progress with personalized recommendations and social features.",
+        "technologies": ["React Native", "Firebase", "Redux", "HealthKit"],
+        "links": {
+          "live": "#"
+        }
+      }
+    ],
+    "all": [
+      {
+        "title": "Project Management Tool",
+        "category": "Web App",
+        "image": "/images/project5.jpg",
+        "description": "A collaborative project management tool with real-time updates, task tracking, and team communication features.",
+        "technologies": ["Angular", "Firebase", "RxJS", "Material UI"],
+        "links": {
+          "live": "#",
+          "github": "#"
+        }
+      },
+      {
+        "title": "Weather Forecast App",
+        "category": "Mobile",
+        "image": "/images/project6.jpg",
+        "description": "A beautiful weather application with detailed forecasts, radar maps, and severe weather alerts.",
+        "technologies": ["Swift", "CoreLocation", "MapKit", "WeatherKit"],
+        "links": {
+          "live": "#",
+          "github": "#"
+        }
+      }
+    ]
+  },
+  "awards": [
+    {
+      "title": "Best Web App Award",
+      "year": "2023",
+      "description": "Recognized for exceptional design and functionality in web application development.",
+      "icon": "trophy"
+    },
+    {
+      "title": "Innovation Excellence",
+      "year": "2022",
+      "description": "Awarded for innovative solutions in mobile app development and AI integration.",
+      "icon": "star"
+    },
+    {
+      "title": "Top Developer Award",
+      "year": "2021",
+      "description": "Recognized as one of the top developers in the industry for technical excellence.",
+      "icon": "academic-cap"
+    }
+  ],
+  "volunteer": [
+    {
+      "title": "Tech Mentor",
+      "organization": "Code for Good",
+      "period": "2022 - Present",
+      "description": "Mentoring aspiring developers and helping them build technical skills through hands-on projects and workshops.",
+      "tags": ["Teaching", "Web Development", "Mentoring"],
+      "icon": "heart"
+    },
+    {
+      "title": "Technical Lead",
+      "organization": "Developers Without Borders",
+      "period": "2021 - 2022",
+      "description": "Led a team of volunteer developers in building web applications for non-profit organizations.",
+      "tags": ["Leadership", "Non-profit", "Project Management"],
+      "icon": "globe-alt"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Science in Computer Science",
+      "school": "Stanford University",
+      "period": "2018 - 2020",
+      "description": "Specialized in Artificial Intelligence and Machine Learning with a focus on Natural Language Processing.",
+      "tags": ["AI/ML", "NLP", "Research"]
+    },
+    {
+      "degree": "Bachelor of Science in Computer Engineering",
+      "school": "MIT",
+      "period": "2014 - 2018",
+      "description": "Graduated with honors. Focused on software engineering and computer architecture.",
+      "tags": ["Software Engineering", "Computer Architecture", "Algorithms"]
+    }
+  ]
+} 

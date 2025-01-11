@@ -1,86 +1,64 @@
-<%!-- Works Page --%>
-<div class="space-y-16">
-  <%!-- Header Section --%>
-  <div class="space-y-8">
-    <h1 class="text-4xl font-bold text-text-primary-light dark:text-text-primary-dark">My Works</h1>
-    <p class="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-2xl">
-      Here's a comprehensive collection of my projects, showcasing my expertise in web development, design, and problem-solving.
+<%!-- Works Page Header --%>
+<div class="py-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 text-text-primary-light dark:text-text-primary-dark">
+      My Works
+    </h1>
+    <p class="text-xl text-center text-text-secondary-light dark:text-text-secondary-dark max-w-2xl mx-auto">
+      A collection of my projects, showcasing my expertise in web development, mobile applications, and UI/UX design.
     </p>
   </div>
+</div>
 
-  <%!-- Filter Categories --%>
-  <div class="flex flex-wrap gap-4">
-    <.link
-      patch="?filter=all"
-      class={"px-4 py-2 rounded-full transition-colors duration-300 #{if @filter == "all", do: "bg-brand text-white hover:bg-brand-dark", else: "bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark"}"}
-    >
-      All
-    </.link>
-    <.link
-      patch="?filter=web"
-      class={"px-4 py-2 rounded-full transition-colors duration-300 #{if @filter == "web", do: "bg-brand text-white hover:bg-brand-dark", else: "bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark"}"}
-    >
-      Web Apps
-    </.link>
-    <.link
-      patch="?filter=mobile"
-      class={"px-4 py-2 rounded-full transition-colors duration-300 #{if @filter == "mobile", do: "bg-brand text-white hover:bg-brand-dark", else: "bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark"}"}
-    >
-      Mobile
-    </.link>
-    <.link
-      patch="?filter=ui"
-      class={"px-4 py-2 rounded-full transition-colors duration-300 #{if @filter == "ui", do: "bg-brand text-white hover:bg-brand-dark", else: "bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark"}"}
-    >
-      UI/UX
-    </.link>
-  </div>
-
-  <%!-- Projects Grid --%>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <%= for project <- filter_projects(@projects, @filter) do %>
-      <div class="group bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-        <div class="aspect-video overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.title}
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-        <div class="p-6 space-y-4">
-          <div class="flex items-start justify-between">
-            <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= project.title %></h3>
-            <span class="px-3 py-1 bg-brand/10 text-brand rounded-full text-sm"><%= project.category %></span>
+<%!-- Projects Grid --%>
+<div class="pb-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <%= for project <- @projects do %>
+        <div class="group bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="aspect-video overflow-hidden">
+            <img
+              src={project["image"]}
+              alt={project["title"]}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
           </div>
-          <p class="text-text-secondary-light dark:text-text-secondary-dark">
-            <%= project.description %>
-          </p>
-          <div class="flex flex-wrap gap-2">
-            <%= for tech <- project.technologies do %>
-              <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
-            <% end %>
-          </div>
-          <%= if project.live_url && project.live_url != "" do %>
-            <div class="flex items-center gap-4 pt-2">
-              <a
-                href={project.live_url}
-                class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
-              >
-                View Live
-                <.icon name="hero-arrow-top-right-on-square" class="w-4 h-4" />
-              </a>
+          <div class="p-6 space-y-4">
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= project["title"] %></h3>
+              <span class="px-3 py-1 bg-brand/10 text-brand rounded-full text-sm"><%= project["category"] %></span>
             </div>
-          <% end %>
+            <p class="text-text-secondary-light dark:text-text-secondary-dark">
+              <%= project["description"] %>
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <%= for tech <- project["technologies"] do %>
+                <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
+              <% end %>
+            </div>
+            <div class="flex items-center gap-4 pt-2">
+              <%= if project["links"]["live"] do %>
+                <a
+                  href={project["links"]["live"]}
+                  class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
+                >
+                  View Live
+                  <.icon name="hero-arrow-top-right-on-square" class="w-4 h-4" />
+                </a>
+              <% end %>
+              <%= if project["links"]["github"] do %>
+                <a
+                  href={project["links"]["github"]}
+                  class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
+                >
+                  View Source
+                  <.icon name="hero-code-bracket" class="w-4 h-4" />
+                </a>
+              <% end %>
+            </div>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-
-  <%!-- Load More Button --%>
-  <div class="text-center pt-8">
-    <button class="px-8 py-3 bg-brand text-white rounded-full hover:bg-brand-dark transition-colors duration-300 inline-flex items-center gap-2">
-      Load More Projects
-      <.icon name="hero-arrow-down" class="w-5 h-5" />
-    </button>
+      <% end %>
+    </div>
   </div>
 </div> 
