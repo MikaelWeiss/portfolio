@@ -20,7 +20,6 @@ defmodule PortfolioTemplateWeb.Router do
 
     get "/", PageController, :home
     get "/works", PageController, :works
-    get "/about", PageController, :about
   end
 
   # Other scopes may use custom stacks.
