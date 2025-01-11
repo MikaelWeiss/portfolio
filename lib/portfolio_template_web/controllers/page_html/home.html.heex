@@ -49,7 +49,7 @@
           <% end %>
         </div>
         <a
-          href="/resume.pdf"
+          href="/resume-mikael-weiss.pdf"
           download
           class="inline-flex items-center gap-2 px-6 py-3 bg-brand text-white rounded-full hover:bg-brand-dark transition-colors duration-300"
         >
@@ -255,19 +255,19 @@
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-text-primary-light dark:text-text-primary-dark">
       Honors & Awards
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="max-w-3xl mx-auto">
       <%= for award <- @awards do %>
-        <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
-              <.icon name={"hero-#{award.icon}"} class="w-6 h-6 text-brand" />
+        <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-8">
+          <div class="flex items-center gap-6 mb-6">
+            <div class="w-16 h-16 bg-brand/10 rounded-xl flex items-center justify-center">
+              <.icon name={"hero-#{award.icon}"} class="w-8 h-8 text-brand" />
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark"><%= award.title %></h3>
-              <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= award.year %></p>
+              <h3 class="text-2xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= award.title %></h3>
+              <p class="text-text-tertiary-light dark:text-text-tertiary-dark mt-1"><%= award.year %></p>
             </div>
           </div>
-          <p class="text-text-secondary-light dark:text-text-secondary-dark">
+          <p class="text-lg text-text-secondary-light dark:text-text-secondary-dark">
             <%= award.description %>
           </p>
         </div>
