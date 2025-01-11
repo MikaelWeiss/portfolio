@@ -1,25 +1,25 @@
-<div class="min-h-screen bg-background-primary-light dark:bg-background-primary-dark transition-colors duration-300">
+<div class="min-h-screen bg-gradient-to-b from-background-primary-light via-background-primary-light to-background-secondary-light dark:from-background-primary-dark dark:via-background-primary-dark dark:to-background-secondary-dark transition-colors duration-300">
   <%!-- Header/Navbar --%>
-  <header class="sticky top-0 bg-background-primary-light/80 dark:bg-background-primary-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-light-dark">
+  <header class="sticky top-0 bg-background-primary-light/70 dark:bg-background-primary-dark/70 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex items-center justify-between h-16">
+      <nav class="flex items-center justify-between h-20">
         <%!-- Logo/Name --%>
         <div class="flex-shrink-0">
-          <a href="/" class="text-xl font-bold text-text-primary-light dark:text-text-primary-dark">
+          <a href="/" class="text-xl font-bold text-text-primary-light dark:text-text-primary-dark hover:opacity-80 transition-opacity">
             Your Name
           </a>
         </div>
 
         <%!-- Navigation Links --%>
         <div class="hidden md:block">
-          <div class="flex items-center p-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full backdrop-blur-sm">
-            <a href="/" class={"px-6 py-2 rounded-full transition-colors #{if @conn.request_path == "/" do "bg-brand text-white" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
+          <div class="flex items-center gap-1 p-1.5 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-full backdrop-blur-sm shadow-lg dark:shadow-zinc-900/30">
+            <a href="/" class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if @conn.request_path == "/" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}>
               Home
             </a>
-            <a href="/works" class={"px-6 py-2 rounded-full transition-colors #{if @conn.request_path == "/works" do "bg-brand text-white" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
+            <a href="/works" class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if @conn.request_path == "/works" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}>
               Work
             </a>
-            <a href="/about" class={"px-6 py-2 rounded-full transition-colors #{if @conn.request_path == "/about" do "bg-brand text-white" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
+            <a href="/about" class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if @conn.request_path == "/about" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}>
               About
             </a>
           </div>
@@ -29,12 +29,12 @@
         <div class="flex items-center">
           <button
             type="button"
-            class="theme-toggle p-2 text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark rounded-lg focus:outline-none focus:ring-2 focus:ring-border-medium dark:focus:ring-border-medium-dark"
+            class="theme-toggle p-3 text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-full backdrop-blur-sm shadow-lg dark:shadow-zinc-900/30 transition-all duration-300 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand/50 dark:focus:ring-brand/50"
             aria-label="Toggle theme"
           >
             <%!-- Sun icon (shown in dark mode) --%>
             <svg
-              class="hidden dark:block w-5 h-5"
+              class="hidden dark:block w-5 h-5 transform transition-transform duration-500 rotate-0 dark:rotate-180"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@
             </svg>
             <%!-- Moon icon (shown in light mode) --%>
             <svg
-              class="block dark:hidden w-5 h-5"
+              class="block dark:hidden w-5 h-5 transform transition-transform duration-500 rotate-0 dark:-rotate-180"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -59,15 +59,15 @@
   </header>
 
   <%!-- Main Content --%>
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <.flash_group flash={@flash} />
     <%= @inner_content %>
   </main>
 
   <%!-- Footer --%>
-  <footer class="bg-background-primary-light dark:bg-background-primary-dark border-t border-border-light dark:border-border-light-dark">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <p class="text-center text-sm text-text-tertiary-light dark:text-text-tertiary-dark">
+  <footer class="bg-background-primary-light/70 dark:bg-background-primary-dark/70 backdrop-blur-md mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <p class="text-center text-sm text-text-tertiary-light dark:text-text-tertiary-dark hover:text-text-secondary-light dark:hover:text-text-secondary-dark transition-colors">
         © <%= DateTime.utc_now().year %> Your Name. All rights reserved.
       </p>
     </div>
