@@ -9,8 +9,10 @@
         <p class="mt-6 text-2xl text-text-secondary-light dark:text-text-secondary-dark">
           Full Stack Developer & UI/UX Designer
         </p>
-        <div class="mt-8 text-xl text-text-secondary-light dark:text-text-secondary-dark typing-text">
-          Expert in: React, Phoenix, TypeScript, Elixir
+        <div class="mt-8 flex justify-center">
+          <div class="text-xl text-text-secondary-light dark:text-text-secondary-dark p-0 m-0">
+            <span class="typing-text inline-block p-0">Expert in: React, Phoenix, TypeScript, Elixir</span>
+          </div>
         </div>
       </div>
       <div class="flex-1 relative">
@@ -365,12 +367,8 @@
     51%, 100% { border-right-color: transparent; }
   }
 
-  @keyframes cursor-fade-out {
-    0% { border-right-color: currentColor; }
-    100% { border-right-color: transparent; }
-  }
-
   .typing-text {
+    display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     border-right: 2px solid;
@@ -378,7 +376,13 @@
     animation: 
       typing 3.5s steps(40, end) forwards,
       blink-while-typing 0.75s step-end infinite 0s,
-      cursor-fade-out 0.75s ease-out 3.5s forwards;
+      hide-cursor 0s step-end forwards 3.5s;
+  }
+
+  @keyframes hide-cursor {
+    to {
+      border-right-color: transparent;
+    }
   }
 </style>
 
