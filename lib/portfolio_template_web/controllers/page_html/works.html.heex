@@ -55,6 +55,11 @@
           <p class="text-text-secondary-light dark:text-text-secondary-dark">
             <%= project.description %>
           </p>
+          <div class="flex flex-wrap gap-2">
+            <%= for tech <- project.technologies do %>
+              <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
+            <% end %>
+          </div>
           <%= if project.live_url && project.live_url != "" do %>
             <div class="flex items-center gap-4 pt-2">
               <a
