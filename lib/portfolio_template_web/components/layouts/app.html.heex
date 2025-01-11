@@ -1,7 +1,7 @@
 <div class="min-h-screen flex flex-col bg-gradient-to-b from-background-primary-light via-background-primary-light to-background-secondary-light dark:from-background-primary-dark dark:via-background-primary-dark dark:to-background-secondary-dark transition-colors duration-300">
   <%!-- Header/Navbar --%>
-  <header class="sticky top-0 bg-background-primary-light/70 dark:bg-background-primary-dark/70 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <header class="sticky top-0 bg-background-primary-light/70 dark:bg-background-primary-dark/70 backdrop-blur-md z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <nav class="flex items-center justify-between h-20">
         <%!-- Logo/Name --%>
         <div class="flex-shrink-0">
@@ -10,7 +10,7 @@
           </a>
         </div>
 
-        <%!-- Navigation Links --%>
+        <%!-- Desktop Navigation Links --%>
         <div class="hidden md:block">
           <div class="flex items-center gap-1 p-1.5 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-full backdrop-blur-sm shadow-lg dark:shadow-zinc-900/30">
             <a href="/" class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if @conn.request_path == "/" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}>
@@ -25,8 +25,8 @@
           </div>
         </div>
 
-        <%!-- Theme Toggle Button --%>
-        <div class="flex items-center">
+        <div class="flex items-center gap-2">
+          <%!-- Theme Toggle Button --%>
           <button
             type="button"
             class="theme-toggle p-3 text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-full backdrop-blur-sm shadow-lg dark:shadow-zinc-900/30 transition-all duration-300 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand/50 dark:focus:ring-brand/50"
@@ -53,8 +53,49 @@
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
             </svg>
           </button>
+
+          <%!-- Mobile Menu Button --%>
+          <button
+            type="button"
+            class="mobile-menu-button md:hidden p-3 text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-full backdrop-blur-sm shadow-lg dark:shadow-zinc-900/30 transition-all duration-300 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brand/50 dark:focus:ring-brand/50"
+            aria-label="Toggle mobile menu"
+          >
+            <svg
+              class="w-5 h-5 menu-open"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg
+              class="hidden w-5 h-5 menu-close"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
       </nav>
+
+      <%!-- Mobile Navigation Menu --%>
+      <div class="mobile-menu hidden md:hidden absolute top-full left-0 right-0 mt-2 mx-4 p-2 bg-background-primary-light dark:bg-background-primary-dark rounded-2xl shadow-xl dark:shadow-zinc-900/30 border border-border-light/10 dark:border-border-light-dark/10 transform origin-top transition-all duration-300">
+        <div class="py-2 space-y-1">
+          <a href="/" class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if @conn.request_path == "/" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
+            Home
+          </a>
+          <a href="/works" class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if @conn.request_path == "/works" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
+            Work
+          </a>
+          <a href="/about" class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if @conn.request_path == "/about" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}>
+            About
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -115,14 +156,14 @@
   </footer>
 </div>
 
-<%!-- Theme Toggle Script --%>
+<%!-- Theme and Mobile Menu Toggle Scripts --%>
 <script>
-  // Initialize theme on page load
+  // Initialize theme and mobile menu on page load
   document.addEventListener('DOMContentLoaded', () => {
+    // Theme toggle functionality (existing code)
     const themeToggleBtn = document.querySelector('.theme-toggle');
     const htmlElement = document.documentElement;
     
-    // Function to set theme
     const setTheme = (isDark) => {
       if (isDark) {
         htmlElement.classList.add('dark');
@@ -132,7 +173,6 @@
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
     };
 
-    // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setTheme(savedTheme === 'dark');
@@ -141,17 +181,43 @@
       setTheme(prefersDark);
     }
 
-    // Toggle theme on button click
     themeToggleBtn.addEventListener('click', () => {
       const isDark = htmlElement.classList.contains('dark');
       setTheme(!isDark);
     });
 
-    // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
       if (!localStorage.getItem('theme')) {
         setTheme(e.matches);
       }
+    });
+
+    // Mobile menu functionality with animation
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuOpenIcon = document.querySelector('.menu-open');
+    const menuCloseIcon = document.querySelector('.menu-close');
+
+    mobileMenuButton.addEventListener('click', () => {
+      // Toggle menu visibility with animation
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        // Add a small delay to ensure the transition works
+        requestAnimationFrame(() => {
+          mobileMenu.classList.remove('opacity-0', 'scale-95');
+          mobileMenu.classList.add('opacity-100', 'scale-100');
+        });
+      } else {
+        mobileMenu.classList.add('opacity-0', 'scale-95');
+        mobileMenu.addEventListener('transitionend', function handler() {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.removeEventListener('transitionend', handler);
+        });
+      }
+      
+      // Toggle icons
+      menuOpenIcon.classList.toggle('hidden');
+      menuCloseIcon.classList.toggle('hidden');
     });
   });
 </script>
