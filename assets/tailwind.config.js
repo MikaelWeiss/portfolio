@@ -47,15 +47,15 @@ module.exports = {
         },
         // Brand Colors
         brand: {
-          DEFAULT: '#2563EB',
-          dark: '#1D4ED8',
-          light: '#3B82F6'
+          DEFAULT: '#4F46E5',
+          dark: '#4338CA',
+          light: '#6366F1'
         },
         // Accent Colors
         accent: {
-          DEFAULT: '#EC4899',
-          dark: '#DB2777',
-          light: '#F472B6'
+          DEFAULT: '#E11D48',
+          dark: '#BE123C',
+          light: '#F43F5E'
         },
         // Border Colors
         border: {
