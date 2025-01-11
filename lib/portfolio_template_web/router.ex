@@ -8,6 +8,7 @@ defmodule PortfolioTemplateWeb.Router do
     plug :put_root_layout, html: {PortfolioTemplateWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :assign_current_path
   end
 
   pipeline :api do
@@ -18,6 +19,8 @@ defmodule PortfolioTemplateWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/works", PageController, :works
+    get "/about", PageController, :about
   end
 
   # Other scopes may use custom stacks.
@@ -39,5 +42,9 @@ defmodule PortfolioTemplateWeb.Router do
 
       live_dashboard "/dashboard", metrics: PortfolioTemplateWeb.Telemetry
     end
+  end
+
+  defp assign_current_path(conn, _opts) do
+    Plug.Conn.assign(conn, :current_path, conn.request_path)
   end
 end

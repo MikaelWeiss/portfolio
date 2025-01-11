@@ -12,12 +12,15 @@
 
         <%!-- Navigation Links --%>
         <div class="hidden md:block">
-          <div class="flex items-center space-x-8">
-            <a href="/" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+          <div class="flex items-center p-1 bg-gray-800/50 dark:bg-gray-800 rounded-full backdrop-blur-sm">
+            <a href="/" class={"px-6 py-2 text-white rounded-full transition-colors #{if @conn.request_path == "/" do "bg-purple-600" end}"}>
               Home
             </a>
-            <a href="/works" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-              Works
+            <a href="/works" class={"px-6 py-2 text-white rounded-full transition-colors #{if @conn.request_path == "/works" do "bg-purple-600" end}"}>
+              Work
+            </a>
+            <a href="/about" class={"px-6 py-2 text-white rounded-full transition-colors #{if @conn.request_path == "/about" do "bg-purple-600" end}"}>
+              About
             </a>
           </div>
         </div>

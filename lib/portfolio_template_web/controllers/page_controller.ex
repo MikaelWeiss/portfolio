@@ -6,4 +6,12 @@ defmodule PortfolioTemplateWeb.PageController do
     # so skip the default app layout.
     render(conn, :home)
   end
+
+  def works(conn, _params) do
+    render(conn, :works)
+  end
+
+  def about(conn, _params) do
+    render(conn, :about)
+  end
 end
