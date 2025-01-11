@@ -247,14 +247,14 @@
 </section>
 
 <%!-- Awards Section --%>
-<section id="honors" class="py-20 scroll-mt-20 bg-background-secondary-light/50 dark:bg-background-secondary-dark/50">
+<section id="honors" class="py-20 scroll-mt-20">
   <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-text-primary-light dark:text-text-primary-dark">
       Honors & Awards
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <%= for award <- @awards do %>
-        <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6">
           <div class="flex items-center gap-4 mb-4">
             <div class="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
               <.icon name={"hero-#{award["icon"]}"} class="w-6 h-6 text-brand" />
@@ -281,7 +281,7 @@
     </h2>
     <div class="space-y-8">
       <%= for vol <- @volunteer do %>
-        <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+        <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6">
           <div class="flex flex-col md:flex-row md:items-start gap-6">
             <div class="w-16 h-16 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
               <.icon name={"hero-#{vol["icon"]}"} class="w-8 h-8 text-brand" />
@@ -311,14 +311,14 @@
 </section>
 
 <%!-- Education Section --%>
-<section id="education" class="py-20 scroll-mt-20 bg-background-secondary-light/50 dark:bg-background-secondary-dark/50">
+<section id="education" class="py-20 scroll-mt-20">
   <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-text-primary-light dark:text-text-primary-dark">
       Education
     </h2>
     <div class="space-y-8">
       <%= for edu <- @education do %>
-        <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6 hover:shadow-xl transition-all duration-300">
+        <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6">
           <div class="flex flex-col md:flex-row md:items-start gap-6">
             <div class="w-16 h-16 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
               <.icon name="hero-academic-cap" class="w-8 h-8 text-brand" />
