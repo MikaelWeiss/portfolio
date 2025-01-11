@@ -1,16 +1,16 @@
 {
   "personal": {
     "name": "Mikael Weiss",
-    "title": "App Developer • Entrepreneur • Pilot • Builder • Engineer",
+    "title": "App Developer • Entrepreneur • Pilot • Engineer",
     "expertise": ["Swift", "SwiftData", "SwiftUI", "UIKit"],
     "images": {
       "profile": "/images/profile.jpg",
       "about": "/images/about.jpg"
     },
     "social_links": {
-      "facebook": "#",
-      "twitter": "#",
-      "linkedin": "LinkedIn",
+      "facebook": "https://www.facebook.com/profile.php?id=100074222080645",
+      "twitter": "https://x.com/MikaelWeis2790",
+      "linkedin": "https://www.linkedin.com/in/mikael-weiss/",
       "github": "github.com/MikaelWeiss"
     }
   },
@@ -31,14 +31,14 @@
     ]
   },
   "about": {
-    "description": "App Developer, Entrepreneur, Pilot, Builder, Engineer, Reader, Climber, and Outdoor Enthusiast with experience in iOS development and entrepreneurship.",
+    "description": "I am a passionate iOS developer focused on creating intuitive and impactful mobile applications. With deep expertise in Swift and SwiftUI, I specialize in building performant, scalable apps that delight users. I thrive on leveraging cutting-edge technologies to solve complex problems while maintaining clean, maintainable code.",
     "stats": [
       {
-        "value": "2+",
+        "value": "3+",
         "label": "Years Experience"
       },
       {
-        "value": "7+",
+        "value": "20+",
         "label": "Projects Completed"
       }
     ]
@@ -49,28 +49,28 @@
       "items": [
         {
           "name": "SwiftUI",
-          "years": "2 years",
-          "proficiency": 90
+          "years": "3 years",
+          "proficiency": 100
         },
         {
           "name": "UIKit",
           "years": "2 years",
-          "proficiency": 85
+          "proficiency": 75
         }
       ]
     },
     "backend": {
-      "title": "Backend Development",
+      "title": "Web Development",
       "items": [
         {
-          "name": "C#",
+          "name": "Elixir/Phoenix",
           "years": "1 year",
-          "proficiency": 80
+          "proficiency": 50
         },
         {
-          "name": "MySQL",
+          "name": "PostgreSQL",
           "years": "1 year",
-          "proficiency": 80
+          "proficiency": 50
         }
       ]
     },
@@ -80,6 +80,16 @@
     }
   },
   "experience": [
+    {
+      "title": "iOS Mobile Developer Intern",
+      "company": "Family Search",
+      "period": "Jan 2025 - Current",
+      "description": [
+        "Worked on the FamilySearch iOS app",
+        "Applied state-of-the-art API's including SwiftUI"
+      ],
+      "technologies": ["SwiftUI", "iOS", "APIs"]
+    },
     {
       "title": "Chief Executive Officer & Lead Developer",
       "company": "Weiss Solutions LLC",
@@ -108,41 +118,43 @@
       {
         "title": "Sherpa",
         "category": "iOS App",
-        "image": "/images/project1.jpg",
+        "image": "/images/sherpa.jpeg",
         "description": "Built from ground zero to App Store in 2 months",
         "technologies": ["SwiftUI", "SwiftData", "iOS"],
         "links": {
-          "live": "#"
+          "live": "https://apps.apple.com/us/app/sherpa-your-everday-guide/id6474707966"
         }
       },
       {
-        "title": "Pastimes",
+        "title": "Strive",
         "category": "iOS App",
-        "image": "/images/project2.jpg",
-        "description": "Contract work application developed at Weiss Solutions LLC",
+        "image": "/images/strive.png",
+        "description": "Personal project to help me stay on top of my goals.",
         "technologies": ["SwiftUI", "iOS", "SwiftData"],
         "links": {
-          "live": "#"
+          "live": "https://apps.apple.com/us/app/strive-planner/id6472100413"
         }
       },
       {
-        "title": "Giveaway",
-        "category": "iOS App",
-        "image": "/images/project3.jpg",
-        "description": "Contract work application developed at Weiss Solutions LLC",
-        "technologies": ["SwiftUI", "iOS", "SwiftData"],
+        "title": "Portfolio Website",
+        "category": "Web Dev",
+        "image": "/images/rachelweiss.png",
+        "description": "Built a portfolio website for my sister Rachel to showcase her work and skills.",
+        "technologies": ["Astro", "LLM", "CSS"],
         "links": {
-          "live": "#"
+          "live": "https://rachelweiss.me",
+          "github": "https://github.com/MikaelWeiss/rachel-portfolio"
         }
       },
       {
-        "title": "LMS",
-        "category": "iOS App",
-        "image": "/images/project4.jpg",
-        "description": "Contract work application developed at Weiss Solutions LLC",
-        "technologies": ["SwiftUI", "iOS", "SwiftData"],
+        "title": "Strive Planner Website",
+        "category": "Web Dev",
+        "image": "/images/striveplanner.png",
+        "description": "Built a website for my personal project Strive Planner to showcase its features and capabilities.",
+        "technologies": ["Elixir", "Phoenix", "TailwindCSS"],
         "links": {
-          "live": "#"
+          "live": "https://striveplanner.org",
+          "github": "https://github.com/MikaelWeiss/striveplanner"
         }
       }
     ],
@@ -150,23 +162,12 @@
       {
         "title": "Inventory",
         "category": "iOS App",
-        "image": "/images/project5.jpg",
-        "description": "Personal work application developed at Weiss Solutions LLC",
+        "image": "/images/inventory.jpeg",
+        "description": "Personal project made to help small business keep track of their inventory.",
         "technologies": ["SwiftUI", "iOS", "SwiftData"],
         "links": {
-          "live": "#",
-          "github": "#"
-        }
-      },
-      {
-        "title": "Strive",
-        "category": "iOS App",
-        "image": "/images/project6.jpg",
-        "description": "Personal work application developed at Weiss Solutions LLC",
-        "technologies": ["SwiftUI", "iOS", "SwiftData"],
-        "links": {
-          "live": "#",
-          "github": "#"
+          "live": "https://apps.apple.com/us/app/inventory-projects-organizer/id1581850111",
+          "github": "https://github.com/Fifty6-Inc/Inventory"
         }
       }
     ]
