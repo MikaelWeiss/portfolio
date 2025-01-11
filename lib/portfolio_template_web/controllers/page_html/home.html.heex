@@ -4,14 +4,14 @@
     <div class="flex flex-col lg:flex-row items-center gap-16">
       <div class="flex-1 text-center">
         <h1 class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-brand via-accent to-brand bg-clip-text text-transparent animate-gradient">
-          <%= @personal["name"] %>
+          <%= @personal.name %>
         </h1>
         <p class="mt-6 text-2xl text-text-secondary-light dark:text-text-secondary-dark">
-          <%= @personal["title"] %>
+          <%= @personal.title %>
         </p>
         <div class="mt-8 flex justify-center">
           <div class="text-xl text-text-secondary-light dark:text-text-secondary-dark p-0 m-0">
-            <span class="typing-text inline-block p-0">Expert in: <%= Enum.join(@personal["expertise"], ", ") %></span>
+            <span class="typing-text inline-block p-0">Expert in: <%= Enum.join(@personal.expertise, ", ") %></span>
           </div>
         </div>
       </div>
@@ -19,7 +19,7 @@
         <div class="relative w-72 h-72 mx-auto">
           <div class="absolute inset-0 bg-gradient-to-r from-brand to-accent rounded-full animate-pulse opacity-20"></div>
           <img
-            src={@personal["images"]["profile"]}
+            src={@personal.images.profile}
             alt="Profile"
             class="relative z-10 w-full h-full object-cover rounded-full border-4 border-background-tertiary-light dark:border-background-tertiary-dark"
           />
@@ -38,13 +38,13 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="space-y-6 text-center lg:text-left">
         <p class="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-2xl mx-auto lg:mx-0">
-          <%= @about["description"] %>
+          <%= @about.description %>
         </p>
         <div class="grid grid-cols-2 gap-6">
-          <%= for stat <- @about["stats"] do %>
+          <%= for stat <- @about.stats do %>
             <div class="p-4 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
-              <div class="text-3xl font-bold text-brand"><%= stat["value"] %></div>
-              <div class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= stat["label"] %></div>
+              <div class="text-3xl font-bold text-brand"><%= stat.value %></div>
+              <div class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= stat.label %></div>
             </div>
           <% end %>
         </div>
@@ -59,7 +59,7 @@
       <div class="relative">
         <div class="aspect-square rounded-2xl overflow-hidden">
           <img
-            src={@personal["images"]["about"]}
+            src={@personal.images.about}
             alt="About Me"
             class="w-full h-full object-cover"
           />
@@ -79,16 +79,16 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <%!-- Frontend Skills --%>
       <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
-        <h3 class="text-xl font-semibold mb-4 text-text-primary-light dark:text-text-primary-dark"><%= @skills["frontend"]["title"] %></h3>
+        <h3 class="text-xl font-semibold mb-4 text-text-primary-light dark:text-text-primary-dark"><%= @skills.frontend.title %></h3>
         <div class="space-y-4">
-          <%= for skill <- @skills["frontend"]["items"] do %>
+          <%= for skill <- @skills.frontend.items do %>
             <div class="skill-item">
               <div class="flex justify-between mb-1">
-                <span class="text-text-primary-light dark:text-text-primary-dark"><%= skill["name"] %></span>
-                <span class="text-text-secondary-light dark:text-text-secondary-dark"><%= skill["years"] %></span>
+                <span class="text-text-primary-light dark:text-text-primary-dark"><%= skill.name %></span>
+                <span class="text-text-secondary-light dark:text-text-secondary-dark"><%= skill.years %></span>
               </div>
               <div class="h-2 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full overflow-hidden">
-                <div class="h-full bg-brand rounded-full" style={"width: #{skill["proficiency"]}%"}></div>
+                <div class="h-full bg-brand rounded-full" style={"width: #{skill.proficiency}%"}></div>
               </div>
             </div>
           <% end %>
@@ -97,16 +97,16 @@
 
       <%!-- Backend Skills --%>
       <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
-        <h3 class="text-xl font-semibold mb-4 text-text-primary-light dark:text-text-primary-dark"><%= @skills["backend"]["title"] %></h3>
+        <h3 class="text-xl font-semibold mb-4 text-text-primary-light dark:text-text-primary-dark"><%= @skills.backend.title %></h3>
         <div class="space-y-4">
-          <%= for skill <- @skills["backend"]["items"] do %>
+          <%= for skill <- @skills.backend.items do %>
             <div class="skill-item">
               <div class="flex justify-between mb-1">
-                <span class="text-text-primary-light dark:text-text-primary-dark"><%= skill["name"] %></span>
-                <span class="text-text-secondary-light dark:text-text-secondary-dark"><%= skill["years"] %></span>
+                <span class="text-text-primary-light dark:text-text-primary-dark"><%= skill.name %></span>
+                <span class="text-text-secondary-light dark:text-text-secondary-dark"><%= skill.years %></span>
               </div>
               <div class="h-2 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full overflow-hidden">
-                <div class="h-full bg-brand rounded-full" style={"width: #{skill["proficiency"]}%"}></div>
+                <div class="h-full bg-brand rounded-full" style={"width: #{skill.proficiency}%"}></div>
               </div>
             </div>
           <% end %>
@@ -115,9 +115,9 @@
 
       <%!-- Other Skills --%>
       <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
-        <h3 class="text-xl font-semibold mb-4 text-text-primary-light dark:text-text-primary-dark"><%= @skills["other"]["title"] %></h3>
+        <h3 class="text-xl font-semibold mb-4 text-text-primary-light dark:text-text-primary-dark"><%= @skills.other.title %></h3>
         <div class="flex flex-wrap gap-2">
-          <%= for skill <- @skills["other"]["items"] do %>
+          <%= for skill <- @skills.other.items do %>
             <span class="px-3 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-sm text-text-primary-light dark:text-text-primary-dark"><%= skill %></span>
           <% end %>
         </div>
@@ -144,16 +144,16 @@
             <div class={"w-full md:w-[45%] #{if rem(index, 2) == 0, do: "", else: "md:hidden"}"}>
               <%= if rem(index, 2) == 0 do %>
                 <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
-                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp["title"] %></h3>
-                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp["company"] %></p>
-                  <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp["period"] %></p>
+                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp.title %></h3>
+                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp.company %></p>
+                  <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp.period %></p>
                   <div class="mt-4 space-y-2">
-                    <%= for desc <- exp["description"] do %>
+                    <%= for desc <- exp.description do %>
                       <p class="text-text-primary-light dark:text-text-primary-dark"><%= desc %></p>
                     <% end %>
                   </div>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <%= for tech <- exp["technologies"] do %>
+                    <%= for tech <- exp.technologies do %>
                       <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
                     <% end %>
                   </div>
@@ -168,16 +168,16 @@
             <div class={"w-full md:w-[45%] md:ml-auto #{if rem(index, 2) == 0, do: "md:hidden", else: ""}"}>
               <%= if rem(index, 2) != 0 do %>
                 <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
-                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp["title"] %></h3>
-                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp["company"] %></p>
-                  <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp["period"] %></p>
+                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp.title %></h3>
+                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp.company %></p>
+                  <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp.period %></p>
                   <div class="mt-4 space-y-2">
-                    <%= for desc <- exp["description"] do %>
+                    <%= for desc <- exp.description do %>
                       <p class="text-text-primary-light dark:text-text-primary-dark"><%= desc %></p>
                     <% end %>
                   </div>
                   <div class="mt-4 flex flex-wrap gap-2">
-                    <%= for tech <- exp["technologies"] do %>
+                    <%= for tech <- exp.technologies do %>
                       <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
                     <% end %>
                   </div>
@@ -202,32 +202,34 @@
         <div class="group bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
           <div class="aspect-video overflow-hidden">
             <img
-              src={project["image"]}
-              alt={project["title"]}
+              src={project.image}
+              alt={project.title}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div class="p-6 space-y-4">
             <div class="flex items-start justify-between">
-              <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= project["title"] %></h3>
-              <span class="px-3 py-1 bg-brand/10 text-brand rounded-full text-sm"><%= project["category"] %></span>
+              <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= project.title %></h3>
+              <span class="px-3 py-1 bg-brand/10 text-brand rounded-full text-sm"><%= project.category %></span>
             </div>
             <p class="text-text-secondary-light dark:text-text-secondary-dark">
-              <%= project["description"] %>
+              <%= project.description %>
             </p>
             <div class="flex flex-wrap gap-2">
-              <%= for tech <- project["technologies"] do %>
+              <%= for tech <- project.technologies do %>
                 <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
               <% end %>
             </div>
             <div class="flex items-center gap-4 pt-2">
-              <a
-                href={project["links"]["live"]}
-                class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
-              >
-                View Live
-                <.icon name="hero-arrow-top-right-on-square" class="w-4 h-4" />
-              </a>
+              <%= if Map.get(project.links, :live) do %>
+                <a
+                  href={project.links.live}
+                  class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
+                >
+                  View Live
+                  <.icon name="hero-arrow-top-right-on-square" class="w-4 h-4" />
+                </a>
+              <% end %>
             </div>
           </div>
         </div>
@@ -257,15 +259,15 @@
         <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6">
           <div class="flex items-center gap-4 mb-4">
             <div class="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
-              <.icon name={"hero-#{award["icon"]}"} class="w-6 h-6 text-brand" />
+              <.icon name={"hero-#{award.icon}"} class="w-6 h-6 text-brand" />
             </div>
             <div>
-              <h3 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark"><%= award["title"] %></h3>
-              <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= award["year"] %></p>
+              <h3 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark"><%= award.title %></h3>
+              <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= award.year %></p>
             </div>
           </div>
           <p class="text-text-secondary-light dark:text-text-secondary-dark">
-            <%= award["description"] %>
+            <%= award.description %>
           </p>
         </div>
       <% end %>
@@ -284,21 +286,21 @@
         <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6">
           <div class="flex flex-col md:flex-row md:items-start gap-6">
             <div class="w-16 h-16 bg-brand/10 rounded-lg flex items-center justify-center flex-shrink-0">
-              <.icon name={"hero-#{vol["icon"]}"} class="w-8 h-8 text-brand" />
+              <.icon name={"hero-#{vol.icon}"} class="w-8 h-8 text-brand" />
             </div>
             <div class="flex-1">
               <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                 <div>
-                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= vol["title"] %></h3>
-                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= vol["organization"] %></p>
+                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= vol.title %></h3>
+                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= vol.organization %></p>
                 </div>
-                <span class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= vol["period"] %></span>
+                <span class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= vol.period %></span>
               </div>
               <p class="text-text-secondary-light dark:text-text-secondary-dark mb-4">
-                <%= vol["description"] %>
+                <%= vol.description %>
               </p>
               <div class="flex flex-wrap gap-2">
-                <%= for tag <- vol["tags"] do %>
+                <%= for tag <- vol.tags do %>
                   <span class="px-3 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-sm text-text-primary-light dark:text-text-primary-dark"><%= tag %></span>
                 <% end %>
               </div>
@@ -326,16 +328,16 @@
             <div class="flex-1">
               <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                 <div>
-                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= edu["degree"] %></h3>
-                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= edu["school"] %></p>
+                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= edu.degree %></h3>
+                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= edu.school %></p>
                 </div>
-                <span class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= edu["period"] %></span>
+                <span class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= edu.period %></span>
               </div>
               <p class="text-text-secondary-light dark:text-text-secondary-dark mb-4">
-                <%= edu["description"] %>
+                <%= edu.description %>
               </p>
               <div class="flex flex-wrap gap-2">
-                <%= for tag <- edu["tags"] do %>
+                <%= for tag <- edu.tags do %>
                   <span class="px-3 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-sm text-text-primary-light dark:text-text-primary-dark"><%= tag %></span>
                 <% end %>
               </div>

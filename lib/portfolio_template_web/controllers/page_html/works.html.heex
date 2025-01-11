@@ -18,37 +18,37 @@
         <div class="group bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
           <div class="aspect-video overflow-hidden">
             <img
-              src={project["image"]}
-              alt={project["title"]}
+              src={project.image}
+              alt={project.title}
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div class="p-6 space-y-4">
             <div class="flex items-start justify-between">
-              <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= project["title"] %></h3>
-              <span class="px-3 py-1 bg-brand/10 text-brand rounded-full text-sm"><%= project["category"] %></span>
+              <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= project.title %></h3>
+              <span class="px-3 py-1 bg-brand/10 text-brand rounded-full text-sm"><%= project.category %></span>
             </div>
             <p class="text-text-secondary-light dark:text-text-secondary-dark">
-              <%= project["description"] %>
+              <%= project.description %>
             </p>
             <div class="flex flex-wrap gap-2">
-              <%= for tech <- project["technologies"] do %>
+              <%= for tech <- project.technologies do %>
                 <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
               <% end %>
             </div>
             <div class="flex items-center gap-4 pt-2">
-              <%= if project["links"]["live"] do %>
+              <%= if Map.get(project.links, :live) do %>
                 <a
-                  href={project["links"]["live"]}
+                  href={project.links.live}
                   class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
                 >
                   View Live
                   <.icon name="hero-arrow-top-right-on-square" class="w-4 h-4" />
                 </a>
               <% end %>
-              <%= if project["links"]["github"] do %>
+              <%= if Map.get(project.links, :github) do %>
                 <a
-                  href={project["links"]["github"]}
+                  href={project.links.github}
                   class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
                 >
                   View Source
