@@ -1,6 +1,6 @@
 <%!-- Hero Section --%>
 <section id="hero" class="min-h-[85vh] flex items-center">
-  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:-mt-20">
     <div class="flex flex-col lg:flex-row items-center gap-16">
       <div class="flex-1 text-center">
         <h1 class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-brand via-accent to-brand bg-clip-text text-transparent animate-gradient">
@@ -135,55 +135,34 @@
     </h2>
     <div class="relative">
       <%!-- Timeline Line --%>
-      <div class="absolute left-0 md:left-1/2 h-full w-px bg-border-light dark:bg-border-light-dark transform -translate-x-1/2"></div>
+      <div class="absolute left-4 md:left-1/2 h-full w-px bg-border-light dark:bg-border-light-dark transform md:-translate-x-1/2"></div>
       
       <%!-- Timeline Items --%>
       <div class="space-y-12">
         <%= for {exp, index} <- Enum.with_index(@experience) do %>
-          <div class="relative flex flex-col md:flex-row items-center md:items-start group">
-            <%!-- Left side content --%>
-            <div class={"w-full md:w-[45%] #{if rem(index, 2) == 0, do: "", else: "md:hidden"}"}>
-              <%= if rem(index, 2) == 0 do %>
-                <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
-                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp.title %></h3>
-                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp.company %></p>
-                  <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp.period %></p>
-                  <div class="mt-4 space-y-2">
-                    <%= for desc <- exp.description do %>
-                      <p class="text-text-primary-light dark:text-text-primary-dark"><%= desc %></p>
-                    <% end %>
-                  </div>
-                  <div class="mt-4 flex flex-wrap gap-2">
-                    <%= for tech <- exp.technologies do %>
-                      <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
-                    <% end %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
+          <div class="relative flex flex-col md:flex-row items-start group">
             <%!-- Timeline dot --%>
-            <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-brand rounded-full transform -translate-x-1/2 flex items-center justify-center">
+            <div class="absolute left-4 md:left-1/2 w-8 h-8 bg-brand rounded-full transform md:-translate-x-1/2 flex items-center justify-center">
               <.icon name="hero-briefcase" class="w-4 h-4 text-white" />
             </div>
-            <%!-- Right side content --%>
-            <div class={"w-full md:w-[45%] md:ml-auto #{if rem(index, 2) == 0, do: "md:hidden", else: ""}"}>
-              <%= if rem(index, 2) != 0 do %>
-                <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
-                  <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp.title %></h3>
-                  <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp.company %></p>
-                  <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp.period %></p>
-                  <div class="mt-4 space-y-2">
-                    <%= for desc <- exp.description do %>
-                      <p class="text-text-primary-light dark:text-text-primary-dark"><%= desc %></p>
-                    <% end %>
-                  </div>
-                  <div class="mt-4 flex flex-wrap gap-2">
-                    <%= for tech <- exp.technologies do %>
-                      <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
-                    <% end %>
-                  </div>
+
+            <%!-- Content container with proper padding --%>
+            <div class={"ml-12 md:ml-0 w-full md:w-[45%] #{if rem(index, 2) != 0, do: "md:ml-auto"}"}>
+              <div class="p-6 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl">
+                <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"><%= exp.title %></h3>
+                <p class="text-text-secondary-light dark:text-text-secondary-dark"><%= exp.company %></p>
+                <p class="text-sm text-text-tertiary-light dark:text-text-tertiary-dark"><%= exp.period %></p>
+                <div class="mt-4 space-y-2">
+                  <%= for desc <- exp.description do %>
+                    <p class="text-text-primary-light dark:text-text-primary-dark"><%= desc %></p>
+                  <% end %>
                 </div>
-              <% end %>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <%= for tech <- exp.technologies do %>
+                    <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark"><%= tech %></span>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
