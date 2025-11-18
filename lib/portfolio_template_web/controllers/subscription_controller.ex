@@ -14,7 +14,7 @@ defmodule PortfolioTemplateWeb.SubscriptionController do
         |> put_flash(:info, "Thanks for subscribing! Please check your email to confirm.")
         |> redirect(to: ~p"/blog")
 
-      {:error, changeset} ->
+      {:error, _changeset} ->
         conn
         |> put_flash(:error, "There was an error with your subscription. Please try again.")
         |> redirect(to: ~p"/blog")

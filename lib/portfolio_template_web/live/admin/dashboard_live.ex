@@ -4,7 +4,7 @@ defmodule PortfolioTemplateWeb.Admin.DashboardLive do
   alias PortfolioTemplate.Blog
 
   @impl true
-  def mount(_params, _session, socket) do
+  def mount(_params, session, socket) do
     posts = Blog.list_all_posts()
 
     {:ok,
@@ -12,8 +12,9 @@ defmodule PortfolioTemplateWeb.Admin.DashboardLive do
      |> assign(:posts, posts)
      |> assign(:selected_post, nil)
      |> assign(:editing_post, new_post_changeset())
-     |> assign(:view_mode, :new),
-     layout: false}
+     |> assign(:view_mode, :new)
+     |> assign(:admin_authenticated, Map.get(session, "admin_authenticated", false))
+     |> assign(:request_path, "/admin")}
   end
 
   @impl true

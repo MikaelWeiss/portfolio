@@ -51,25 +51,34 @@
 
         <%!-- Desktop Navigation Links --%>
         <div class="hidden md:block">
+          <% current_path = if Map.has_key?(assigns, :conn), do: @conn.request_path, else: Map.get(assigns, :request_path, "/") %>
           <div class="flex items-center gap-1 p-1.5 bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-full backdrop-blur-sm shadow-lg dark:shadow-zinc-900/30">
             <a
               href="/"
-              class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if @conn.request_path == "/" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}
+              class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if current_path == "/" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}
             >
               Home
             </a>
             <a
               href="/works"
-              class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if @conn.request_path == "/works" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}
+              class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if current_path == "/works" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}
             >
               Work
             </a>
             <a
               href="/blog"
-              class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if @conn.request_path == "/blog" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}
+              class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if current_path == "/blog" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}
             >
               Blog
             </a>
+            <%= if (Map.has_key?(assigns, :conn) && Plug.Conn.get_session(@conn, :admin_authenticated)) || Map.get(assigns, :admin_authenticated, false) do %>
+              <a
+                href="/admin"
+                class={"relative px-6 py-2.5 rounded-full transition-all duration-300 origin-center isolate #{if String.starts_with?(current_path, "/admin") do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40 scale-[1.02] z-10" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark hover:shadow-md hover:scale-[1.02] hover:z-10" end}"}
+              >
+                Admin
+              </a>
+            <% end %>
           </div>
         </div>
 
@@ -140,19 +149,34 @@
 
       <%!-- Mobile Navigation Menu --%>
       <div class="mobile-menu hidden md:hidden absolute top-full left-0 right-0 mt-2 mx-4 p-2 bg-background-primary-light/95 dark:bg-background-primary-dark/95 backdrop-blur-md rounded-2xl shadow-xl dark:shadow-zinc-900/30 border border-border-light/10 dark:border-border-light-dark/10 transform origin-top transition-all duration-300">
+        <% current_path = if Map.has_key?(assigns, :conn), do: @conn.request_path, else: Map.get(assigns, :request_path, "/") %>
         <div class="py-2 space-y-1">
           <a
             href="/"
-            class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if @conn.request_path == "/" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}
+            class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if current_path == "/" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}
           >
             Home
           </a>
           <a
             href="/works"
-            class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if @conn.request_path == "/works" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}
+            class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if current_path == "/works" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}
           >
             Work
           </a>
+          <a
+            href="/blog"
+            class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if current_path == "/blog" do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}
+          >
+            Blog
+          </a>
+          <%= if (Map.has_key?(assigns, :conn) && Plug.Conn.get_session(@conn, :admin_authenticated)) || Map.get(assigns, :admin_authenticated, false) do %>
+            <a
+              href="/admin"
+              class={"block px-4 py-3 rounded-xl transition-all duration-300 #{if String.starts_with?(current_path, "/admin") do "bg-brand text-white shadow-lg shadow-brand/25 dark:shadow-brand/40" else "text-text-primary-light dark:text-text-primary-dark hover:bg-background-secondary-light dark:hover:bg-background-secondary-dark" end}"}
+            >
+              Admin
+            </a>
+          <% end %>
         </div>
       </div>
     </div>

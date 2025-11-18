@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" class="h-full">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="csrf-token" content={Plug.CSRFProtection.get_csrf_token()} />
-    <title>Admin Dashboard - Mikael Weiss</title>
-    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
-    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
-    </script>
-    <script>
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-    </script>
-  </head>
-  <body class="h-full bg-background-secondary-light dark:bg-background-secondary-dark">
-    <.flash_group flash={@flash} />
-
-    <div class="flex h-screen">
+<div class="flex min-h-screen -mx-4 sm:-mx-6 lg:-mx-8 -my-12">
       <aside class="w-96 bg-background-primary-light dark:bg-background-primary-dark border-r border-border-light dark:border-border-light-dark overflow-y-auto">
         <div class="p-6 border-b border-border-light dark:border-border-light-dark">
           <div class="flex items-center justify-between mb-6">
@@ -294,5 +273,3 @@
         </div>
       </main>
     </div>
-  </body>
-</html>

@@ -67,7 +67,7 @@
           <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
             Get notified when I publish new posts
           </p>
-          <.form :let={f} for={%{}} action={~p"/subscribe"} method="post" class="flex gap-3 flex-shrink-0">
+          <.form :let={_f} for={%{}} action={~p"/subscribe"} method="post" class="flex gap-3 flex-shrink-0">
             <input
               type="email"
               name="email"

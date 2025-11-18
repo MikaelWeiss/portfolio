@@ -32,7 +32,7 @@ defmodule PortfolioTemplate.Subscriptions do
       nil ->
         {:error, :not_found}
 
-      %Subscriber{verified: true} = subscriber ->
+      %Subscriber{verified: true} = _subscriber ->
         {:error, :already_verified}
 
       subscriber ->
