@@ -57,7 +57,10 @@ defmodule PortfolioTemplate.MixProject do
       {:ecto, "~> 3.10"},
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
-      {:earmark, "~> 1.4"}
+      {:earmark, "~> 1.4"},
+      {:swoosh, "~> 1.16"},
+      {:finch, "~> 0.13"},
+      {:hackney, "~> 1.20"}
     ]
   end
 

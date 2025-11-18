@@ -16,7 +16,7 @@ defmodule PortfolioTemplateWeb.Router do
   end
 
   pipeline :admin do
-    plug :basic_auth
+    plug PortfolioTemplateWeb.Plugs.RequireAuth
   end
 
   scope "/", PortfolioTemplateWeb do
@@ -26,6 +26,17 @@ defmodule PortfolioTemplateWeb.Router do
     get "/works", PageController, :works
     get "/blog", PageController, :blog
     get "/blog/:slug", PageController, :blog_post
+  end
+
+  scope "/admin", PortfolioTemplateWeb do
+    pipe_through :browser
+
+    get "/", AuthController, :index
+    get "/login", AuthController, :new
+    post "/login", AuthController, :create
+    get "/login/sent", AuthController, :sent
+    get "/verify", AuthController, :verify
+    delete "/logout", AuthController, :delete
   end
 
   scope "/admin/blog", PortfolioTemplateWeb do
@@ -62,12 +73,5 @@ defmodule PortfolioTemplateWeb.Router do
 
   defp assign_current_path(conn, _opts) do
     Plug.Conn.assign(conn, :current_path, conn.request_path)
-  end
-
-  defp basic_auth(conn, _opts) do
-    username = System.get_env("ADMIN_USERNAME") || "admin"
-    password = System.get_env("ADMIN_PASSWORD") || "password"
-
-    Plug.BasicAuth.basic_auth(conn, username: username, password: password)
   end
 end
