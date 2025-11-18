@@ -33,11 +33,17 @@ defmodule PortfolioTemplateWeb.AuthController do
 
           case Accounts.generate_magic_link(user, base_url) do
             {:ok, magic_link_url, _magic_link} ->
-              send_magic_link_email(user.email, magic_link_url)
+              case send_magic_link_email(user.email, magic_link_url) do
+                {:ok, _result} ->
+                  conn
+                  |> put_flash(:info, "Check your email! We sent you a login link.")
+                  |> redirect(to: ~p"/admin/login/sent")
 
-              conn
-              |> put_flash(:info, "Check your email! We sent you a login link.")
-              |> redirect(to: ~p"/admin/login/sent")
+                {:error, reason} ->
+                  conn
+                  |> put_flash(:error, "Failed to send email: #{inspect(reason)}. Please try again.")
+                  |> redirect(to: ~p"/admin/login")
+              end
 
             {:error, _changeset} ->
               conn
@@ -93,7 +99,7 @@ defmodule PortfolioTemplateWeb.AuthController do
     email =
       new()
       |> to(to_email)
-      |> from({"Mikael Weiss Portfolio", "noreply@mikaelweiss.fly.dev"})
+      |> from({"Mikael Weiss Portfolio", "noreply@mikaelweiss.dev"})
       |> subject("Your login link")
       |> html_body("""
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
@@ -125,6 +131,12 @@ defmodule PortfolioTemplateWeb.AuthController do
       If you didn't request this email, you can safely ignore it.
       """)
 
-    Mailer.deliver(email)
+    case Mailer.deliver(email) do
+      {:ok, result} ->
+        {:ok, result}
+
+      {:error, reason} ->
+        {:error, reason}
+    end
   end
 end

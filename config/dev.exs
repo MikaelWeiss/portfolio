@@ -65,11 +65,10 @@ config :portfolio_template, PortfolioTemplateWeb.Endpoint,
 # Enable dev routes for dashboard and mailbox
 config :portfolio_template, dev_routes: true
 
-# Configure Swoosh mailer for development (logs emails to console)
-config :portfolio_template, PortfolioTemplate.Mailer, adapter: Swoosh.Adapters.Local
-
-# Swoosh API client for development
-config :swoosh, :api_client, false
+# Configure Swoosh mailer for development (Resend API)
+config :portfolio_template, PortfolioTemplate.Mailer,
+  adapter: Resend.Swoosh.Adapter,
+  api_key: System.get_env("RESEND_API_KEY")
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

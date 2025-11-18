@@ -96,11 +96,8 @@ if config_env() == :prod do
   #
   # Check `Plug.SSL` for all available options in `force_ssl`.
 
-  # Configure Swoosh mailer for production with Resend
+  # Configure Swoosh mailer for production with Resend API
   config :portfolio_template, PortfolioTemplate.Mailer,
-    adapter: Swoosh.Adapters.Resend,
+    adapter: Resend.Swoosh.Adapter,
     api_key: System.get_env("RESEND_API_KEY")
-
-  # Swoosh API client for production
-  config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: PortfolioTemplate.Finch
 end

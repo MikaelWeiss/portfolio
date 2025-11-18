@@ -59,6 +59,7 @@ defmodule PortfolioTemplate.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:earmark, "~> 1.4"},
       {:swoosh, "~> 1.16"},
+      {:resend, "~> 0.4.4"},
       {:finch, "~> 0.13"},
       {:hackney, "~> 1.20"}
     ]
