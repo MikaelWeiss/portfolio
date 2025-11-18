@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-50 dark:bg-gray-900">
+<html lang="en" class="h-full">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,62 +8,82 @@
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   </head>
-  <body class="h-full">
-    <div class="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+  <body class="h-full bg-background-secondary-light dark:bg-background-secondary-dark">
+    <div class="min-h-full flex flex-col justify-center py-16 px-6 sm:px-8 lg:px-10">
       <div class="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Admin Login
-        </h2>
-        <p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
-          Enter your email to receive a login link
-        </p>
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand/10 dark:bg-brand/20 mb-6">
+            <svg class="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h2 class="text-4xl font-semibold text-text-primary-light dark:text-text-primary-dark mb-3 tracking-tight">
+            Admin Login
+          </h2>
+          <p class="text-base text-text-secondary-light dark:text-text-secondary-dark">
+            Enter your email to receive a login link
+          </p>
+        </div>
       </div>
 
-      <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div class="bg-white dark:bg-gray-800 py-8 px-4 shadow sm:rounded-lg sm:px-10">
+      <div class="sm:mx-auto sm:w-full sm:max-w-md">
+        <div class="card-refined p-10">
           <%= if @flash["info"] do %>
-            <div class="mb-4 rounded-md bg-blue-50 dark:bg-blue-900/20 p-4">
-              <p class="text-sm font-medium text-blue-800 dark:text-blue-200">
-                <%= @flash["info"] %>
-              </p>
+            <div class="mb-6 p-4 rounded-xl bg-brand/10 dark:bg-brand/20 border border-brand/20 dark:border-brand/30">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-brand flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                </svg>
+                <p class="text-sm font-medium text-brand">
+                  <%= @flash["info"] %>
+                </p>
+              </div>
             </div>
           <% end %>
 
           <%= if @flash["error"] do %>
-            <div class="mb-4 rounded-md bg-red-50 dark:bg-red-900/20 p-4">
-              <p class="text-sm font-medium text-red-800 dark:text-red-200">
-                <%= @flash["error"] %>
-              </p>
+            <div class="mb-6 p-4 rounded-xl bg-utility-error/10 dark:bg-utility-error/20 border border-utility-error/20 dark:border-utility-error/30">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-utility-error flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+                <p class="text-sm font-medium text-utility-error">
+                  <%= @flash["error"] %>
+                </p>
+              </div>
             </div>
           <% end %>
 
           <.form :let={f} for={%{}} action={~p"/admin/login"} method="post" class="space-y-6">
             <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label for="email" class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-2">
                 Email address
               </label>
-              <div class="mt-1">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  required
-                  class="appearance-none block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  placeholder="you@example.com"
-                />
-              </div>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="input-refined"
+                placeholder="you@example.com"
+              />
             </div>
 
-            <div>
-              <button
-                type="submit"
-                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors"
-              >
-                Send login link
-              </button>
-            </div>
+            <button
+              type="submit"
+              class="btn-primary w-full"
+            >
+              Send login link
+            </button>
           </.form>
         </div>
       </div>

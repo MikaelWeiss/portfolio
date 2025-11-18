@@ -2,4 +2,173 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* This file is for your main application CSS */
+/* Jony Ive-inspired Custom Styles */
+
+@layer base {
+  /* Better scrolling behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Refined selection colors */
+  ::selection {
+    @apply bg-brand/20 text-text-primary-light;
+  }
+
+  .dark ::selection {
+    @apply bg-brand/30 text-text-primary-dark;
+  }
+}
+
+@layer components {
+  /* Enhanced Prose Styles for Blog Content */
+  .prose-refined {
+    @apply prose prose-lg max-w-none;
+    @apply prose-headings:font-semibold prose-headings:tracking-tight;
+    @apply prose-h1:text-4xl prose-h1:leading-tight prose-h1:mb-8;
+    @apply prose-h2:text-3xl prose-h2:leading-snug prose-h2:mt-12 prose-h2:mb-6;
+    @apply prose-h3:text-2xl prose-h3:leading-snug prose-h3:mt-10 prose-h3:mb-4;
+    @apply prose-p:text-text-primary-light prose-p:leading-relaxed prose-p:mb-6;
+    @apply prose-a:text-brand prose-a:no-underline prose-a:font-medium;
+    @apply prose-a:transition-colors prose-a:duration-200;
+    @apply hover:prose-a:text-brand-dark;
+    @apply prose-strong:text-text-primary-light prose-strong:font-semibold;
+    @apply prose-code:text-brand-dark prose-code:bg-background-tertiary-light;
+    @apply prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm;
+    @apply prose-code:before:content-none prose-code:after:content-none;
+    @apply prose-pre:bg-background-tertiary-light prose-pre:border prose-pre:border-border-light;
+    @apply prose-pre:rounded-xl prose-pre:shadow-sm;
+    @apply prose-blockquote:border-l-4 prose-blockquote:border-brand;
+    @apply prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-text-secondary-light;
+    @apply prose-img:rounded-xl prose-img:shadow-md;
+    @apply prose-ul:my-6 prose-ol:my-6;
+    @apply prose-li:text-text-primary-light prose-li:my-2;
+  }
+
+  .dark .prose-refined {
+    @apply prose-invert;
+    @apply prose-p:text-text-primary-dark;
+    @apply prose-strong:text-text-primary-dark;
+    @apply prose-code:text-brand-light prose-code:bg-background-tertiary-dark;
+    @apply prose-pre:bg-background-tertiary-dark prose-pre:border-border-light-dark;
+    @apply prose-blockquote:text-text-secondary-dark;
+    @apply prose-li:text-text-primary-dark;
+  }
+
+  /* Refined Card Component */
+  .card-refined {
+    @apply bg-background-primary-light rounded-2xl shadow-sm;
+    @apply border border-border-light/50;
+    @apply transition-all duration-300 ease-apple;
+  }
+
+  .dark .card-refined {
+    @apply bg-background-primary-dark border-border-light-dark/50;
+  }
+
+  .card-refined:hover {
+    @apply shadow-lg scale-[1.02] border-border-medium;
+  }
+
+  .dark .card-refined:hover {
+    @apply border-border-medium-dark;
+  }
+
+  /* Refined Button Component */
+  .btn-primary {
+    @apply px-6 py-3 bg-brand text-white font-medium rounded-xl;
+    @apply shadow-sm hover:shadow-md;
+    @apply transition-all duration-250 ease-apple;
+    @apply hover:bg-brand-dark hover:-translate-y-0.5;
+    @apply focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2;
+    @apply active:scale-95;
+  }
+
+  .dark .btn-primary {
+    @apply focus:ring-offset-background-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-background-secondary-light text-text-primary-light font-medium rounded-xl;
+    @apply border border-border-light;
+    @apply shadow-sm hover:shadow-md;
+    @apply transition-all duration-250 ease-apple;
+    @apply hover:bg-background-tertiary-light hover:-translate-y-0.5;
+    @apply focus:outline-none focus:ring-2 focus:ring-border-medium focus:ring-offset-2;
+    @apply active:scale-95;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-background-secondary-dark text-text-primary-dark;
+    @apply border-border-light-dark;
+    @apply hover:bg-background-tertiary-dark;
+    @apply focus:ring-offset-background-primary-dark;
+  }
+
+  /* Refined Input Component */
+  .input-refined {
+    @apply w-full px-4 py-3 bg-background-primary-light;
+    @apply border border-border-light rounded-xl;
+    @apply text-text-primary-light placeholder-text-tertiary-light;
+    @apply transition-all duration-200 ease-apple;
+    @apply focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent;
+    @apply shadow-sm focus:shadow-md;
+  }
+
+  .dark .input-refined {
+    @apply bg-background-secondary-dark border-border-light-dark;
+    @apply text-text-primary-dark placeholder-text-tertiary-dark;
+  }
+
+  /* Refined Textarea Component */
+  .textarea-refined {
+    @apply input-refined resize-none;
+    @apply font-mono text-sm;
+  }
+
+  /* Badge Component */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    @apply transition-colors duration-200;
+  }
+
+  .badge-success {
+    @apply bg-utility-success/10 text-utility-success;
+    @apply border border-utility-success/20;
+  }
+
+  .badge-draft {
+    @apply bg-text-tertiary-light/10 text-text-secondary-light;
+    @apply border border-text-tertiary-light/20;
+  }
+
+  .dark .badge-draft {
+    @apply bg-text-tertiary-dark/10 text-text-secondary-dark;
+    @apply border-text-tertiary-dark/20;
+  }
+}
+
+@layer utilities {
+  /* Smooth transitions utility */
+  .transition-apple {
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-background-primary-light/80 backdrop-blur-md;
+  }
+
+  .dark .glass {
+    @apply bg-background-primary-dark/80;
+  }
+
+  /* Subtle hover lift */
+  .hover-lift {
+    @apply transition-transform duration-250 ease-apple;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+  }
+}
