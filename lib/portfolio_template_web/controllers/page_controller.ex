@@ -18,4 +18,8 @@ defmodule PortfolioTemplateWeb.PageController do
   def works(conn, _params) do
     render(conn, :works, projects: Data.get_all_projects())
   end
+
+  def blog(conn, _params) do
+    render(conn, :blog)
+  end
 end
