@@ -1,5 +1,15 @@
 import Config
 
+# Configure the database for development
+config :portfolio_template, PortfolioTemplate.Repo,
+  username: "mikaelweiss",
+  password: "TopS3cr3t",
+  hostname: "localhost",
+  database: "portfolio_template_dev",
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

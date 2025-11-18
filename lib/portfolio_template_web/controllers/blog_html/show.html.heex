@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+
+    <title><%= @post.meta_title || @post.title %> - Mikael Weiss</title>
+    <meta name="description" content={@post.meta_description || @post.excerpt || String.slice(@post.content, 0, 160)} />
+
+    <meta property="og:title" content={@post.meta_title || @post.title} />
+    <meta property="og:description" content={@post.meta_description || @post.excerpt || String.slice(@post.content, 0, 160)} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={"#{PortfolioTemplateWeb.Endpoint.url()}/blog/#{@post.slug}"} />
+    <%= if @post.cover_image_path do %>
+      <meta property="og:image" content={PortfolioTemplateWeb.Endpoint.url() <> @post.cover_image_path} />
+    <% end %>
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={@post.meta_title || @post.title} />
+    <meta name="twitter:description" content={@post.meta_description || @post.excerpt || String.slice(@post.content, 0, 160)} />
+    <%= if @post.cover_image_path do %>
+      <meta name="twitter:image" content={PortfolioTemplateWeb.Endpoint.url() <> @post.cover_image_path} />
+    <% end %>
+
+    <meta property="article:published_time" content={@post.published_at} />
+    <meta property="article:modified_time" content={@post.last_updated} />
+    <meta property="article:author" content="Mikael Weiss" />
+
+    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "<%= @post.title %>",
+        "description": "<%= @post.excerpt || String.slice(@post.content, 0, 160) %>",
+        "author": {
+          "@type": "Person",
+          "name": "Mikael Weiss"
+        },
+        "datePublished": "<%= @post.published_at %>",
+        "dateModified": "<%= @post.last_updated %>",
+        <%= if @post.cover_image_path do %>
+        "image": "<%= PortfolioTemplateWeb.Endpoint.url() <> @post.cover_image_path %>",
+        <% end %>
+        "publisher": {
+          "@type": "Person",
+          "name": "Mikael Weiss"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <header class="mb-8">
+        <nav class="mb-8">
+          <a
+            href={~p"/blog"}
+            class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium"
+          >
+            ← Back to blog
+          </a>
+        </nav>
+
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <%= @post.title %>
+        </h1>
+
+        <div class="flex items-center text-gray-600 dark:text-gray-400 text-sm">
+          <span>By Mikael Weiss</span>
+          <span class="mx-2">•</span>
+          <time datetime={@post.published_at}>
+            <%= format_date(@post.published_at) %>
+          </time>
+          <span class="mx-2">•</span>
+          <span><%= reading_time(@post.content) %></span>
+        </div>
+      </header>
+
+      <%= if @post.cover_image_path do %>
+        <div class="mb-8">
+          <img
+            src={@post.cover_image_path}
+            alt={@post.title}
+            class="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      <% end %>
+
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <%= raw(Earmark.as_html!(@post.content)) %>
+      </div>
+
+      <footer class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            Enjoyed this post?
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Subscribe to get notified when I publish new posts
+          </p>
+
+          <.form :let={f} for={%{}} action={~p"/subscribe"} method="post" class="flex gap-2">
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            />
+            <button
+              type="submit"
+              class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors"
+            >
+              Subscribe
+            </button>
+          </.form>
+        </div>
+      </footer>
+    </article>
+  </body>
+</html>

@@ -9,8 +9,10 @@ defmodule PortfolioTemplate.Application do
   def start(_type, _args) do
     children = [
       PortfolioTemplateWeb.Telemetry,
+      PortfolioTemplate.Repo,
       {DNSCluster, query: Application.get_env(:portfolio_template, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PortfolioTemplate.PubSub},
+      {Finch, name: PortfolioTemplate.Finch},
       # Start a worker by calling: PortfolioTemplate.Worker.start_link(arg)
       # {PortfolioTemplate.Worker, arg},
       # Start to serve requests, typically the last entry

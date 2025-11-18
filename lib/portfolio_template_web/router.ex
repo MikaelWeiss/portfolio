@@ -15,12 +15,40 @@ defmodule PortfolioTemplateWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :require_admin do
+    plug :browser
+    plug PortfolioTemplateWeb.Plugs.RequireAdmin
+  end
+
   scope "/", PortfolioTemplateWeb do
     pipe_through :browser
 
     get "/", PageController, :home
     get "/works", PageController, :works
-    get "/blog", PageController, :blog
+
+    get "/blog", BlogController, :index
+    get "/blog/:slug", BlogController, :show
+
+    post "/subscribe", SubscriptionController, :create
+    get "/verify-subscription", SubscriptionController, :verify
+    get "/unsubscribe", SubscriptionController, :unsubscribe
+
+    get "/sitemap.xml", SitemapController, :index
+  end
+
+  scope "/admin", PortfolioTemplateWeb.Admin do
+    pipe_through :browser
+
+    get "/login", AuthController, :new
+    post "/login", AuthController, :create
+    get "/verify", AuthController, :verify
+    get "/logout", AuthController, :delete
+  end
+
+  scope "/admin", PortfolioTemplateWeb.Admin do
+    pipe_through :require_admin
+
+    live "/", DashboardLive
   end
 
   # Other scopes may use custom stacks.

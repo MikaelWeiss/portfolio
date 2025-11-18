@@ -8,7 +8,18 @@
 import Config
 
 config :portfolio_template,
+  ecto_repos: [PortfolioTemplate.Repo],
   generators: [timestamp_type: :utc_datetime]
+
+# Configure the Repo
+config :portfolio_template, PortfolioTemplate.Repo,
+  migration_timestamps: [type: :utc_datetime]
+
+# Configure Swoosh mailer
+config :portfolio_template, PortfolioTemplate.Mailer,
+  adapter: Swoosh.Adapters.Local
+
+config :swoosh, :api_client, Swoosh.ApiClient.Finch
 
 # Configures the endpoint
 config :portfolio_template, PortfolioTemplateWeb.Endpoint,

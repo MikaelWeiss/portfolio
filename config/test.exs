@@ -1,5 +1,14 @@
 import Config
 
+# Configure the database for test
+config :portfolio_template, PortfolioTemplate.Repo,
+  username: "mikaelweiss",
+  password: "TopS3cr3t",
+  hostname: "localhost",
+  database: "portfolio_template_test#{System.get_env("MIX_TEST_PARTITION")}",
+  pool: Ecto.Adapters.SQL.Sandbox,
+  pool_size: System.schedulers_online() * 2
+
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :portfolio_template, PortfolioTemplateWeb.Endpoint,
