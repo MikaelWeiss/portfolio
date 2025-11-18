@@ -1,0 +1,93 @@
+<%!-- Blog Post Header --%>
+<div class="py-12">
+  <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <%!-- Back to Blog Link --%>
+    <div class="mb-8">
+      <a
+        href={~p"/blog"}
+        class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
+      >
+        <.icon name="hero-arrow-left" class="w-4 h-4" />
+        Back to Blog
+      </a>
+    </div>
+
+    <%!-- Post Metadata --%>
+    <div class="mb-6">
+      <div class="flex items-center gap-3 text-sm text-text-secondary-light dark:text-text-secondary-dark mb-4">
+        <div class="flex items-center gap-2">
+          <.icon name="hero-calendar" class="w-4 h-4" />
+          <time datetime={@post.published_at}>
+            <%= Calendar.strftime(@post.published_at, "%B %d, %Y") %>
+          </time>
+        </div>
+      </div>
+
+      <%!-- Tags --%>
+      <%= if @post.tags && length(@post.tags) > 0 do %>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <%= for tag <- @post.tags do %>
+            <span class="px-3 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-sm text-text-primary-light dark:text-text-primary-dark">
+              <%= tag %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <%!-- Post Title --%>
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-text-primary-light dark:text-text-primary-dark">
+      <%= @post.title %>
+    </h1>
+
+    <%!-- Post Excerpt --%>
+    <%= if @post.excerpt do %>
+      <p class="text-xl text-text-secondary-light dark:text-text-secondary-dark mb-8 leading-relaxed">
+        <%= @post.excerpt %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+<%!-- Cover Image --%>
+<%= if @post.cover_image do %>
+  <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+    <div class="aspect-video rounded-xl overflow-hidden">
+      <img
+        src={@post.cover_image}
+        alt={@post.title}
+        class="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+<% end %>
+
+<%!-- Post Content --%>
+<div class="pb-20">
+  <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <article class="prose prose-lg prose-slate dark:prose-invert max-w-none
+      prose-headings:text-text-primary-light dark:prose-headings:text-text-primary-dark
+      prose-p:text-text-secondary-light dark:prose-p:text-text-secondary-dark
+      prose-a:text-brand hover:prose-a:text-brand-dark
+      prose-strong:text-text-primary-light dark:prose-strong:text-text-primary-dark
+      prose-code:text-brand prose-code:bg-background-tertiary-light dark:prose-code:bg-background-tertiary-dark
+      prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+      prose-pre:bg-background-tertiary-light dark:prose-pre:bg-background-tertiary-dark
+      prose-pre:border prose-pre:border-border-light dark:prose-pre:border-border-dark
+      prose-blockquote:border-brand prose-blockquote:text-text-secondary-light dark:prose-blockquote:text-text-secondary-dark
+      prose-img:rounded-xl prose-img:shadow-lg">
+      <%= raw(PortfolioTemplate.Blog.render_markdown(@post.content)) %>
+    </article>
+
+    <%!-- Back to Blog Link (Bottom) --%>
+    <div class="mt-12 pt-8 border-t border-border-light dark:border-border-dark">
+      <a
+        href={~p"/blog"}
+        class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300"
+      >
+        <.icon name="hero-arrow-left" class="w-4 h-4" />
+        Back to Blog
+      </a>
+    </div>
+  </div>
+</div>

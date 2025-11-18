@@ -1,1 +1,80 @@
-Hi there
+<%!-- Blog Page Header --%>
+<div class="py-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 text-text-primary-light dark:text-text-primary-dark">
+      Blog
+    </h1>
+    <p class="text-xl text-center text-text-secondary-light dark:text-text-secondary-dark max-w-2xl mx-auto">
+      Thoughts, stories, and insights about software development, technology, and more.
+    </p>
+  </div>
+</div>
+
+<%!-- Blog Posts Grid --%>
+<div class="pb-20">
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <%= if Enum.empty?(@posts) do %>
+      <div class="text-center py-12">
+        <.icon name="hero-document-text" class="w-16 h-16 mx-auto mb-4 text-text-secondary-light dark:text-text-secondary-dark" />
+        <p class="text-xl text-text-secondary-light dark:text-text-secondary-dark">
+          No blog posts yet. Check back soon!
+        </p>
+      </div>
+    <% else %>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <%= for post <- @posts do %>
+          <div class="group">
+            <a href={~p"/blog/#{post.slug}"} class="block">
+              <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+                <%= if post.cover_image do %>
+                  <div class="aspect-video overflow-hidden">
+                    <img
+                      src={post.cover_image}
+                      alt={post.title}
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                <% else %>
+                  <div class="aspect-video bg-gradient-to-br from-brand/20 to-accent/20 flex items-center justify-center">
+                    <.icon name="hero-document-text" class="w-16 h-16 text-brand" />
+                  </div>
+                <% end %>
+                <div class="p-6 space-y-4 flex-1 flex flex-col">
+                  <div class="flex-1">
+                    <div class="flex items-center gap-2 mb-3 text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                      <.icon name="hero-calendar" class="w-4 h-4" />
+                      <time datetime={post.published_at}>
+                        <%= Calendar.strftime(post.published_at, "%B %d, %Y") %>
+                      </time>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark mb-3 group-hover:text-brand transition-colors duration-300">
+                      <%= post.title %>
+                    </h3>
+                    <%= if post.excerpt do %>
+                      <p class="text-text-secondary-light dark:text-text-secondary-dark line-clamp-3">
+                        <%= post.excerpt %>
+                      </p>
+                    <% end %>
+                  </div>
+                  <%= if post.tags && length(post.tags) > 0 do %>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                      <%= for tag <- Enum.take(post.tags, 3) do %>
+                        <span class="px-2 py-1 bg-background-tertiary-light dark:bg-background-tertiary-dark rounded-full text-xs text-text-primary-light dark:text-text-primary-dark">
+                          <%= tag %>
+                        </span>
+                      <% end %>
+                    </div>
+                  <% end %>
+                  <div class="flex items-center gap-2 text-brand hover:text-brand-dark transition-colors duration-300 pt-2">
+                    Read More
+                    <.icon name="hero-arrow-right" class="w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

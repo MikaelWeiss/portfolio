@@ -15,12 +15,28 @@ defmodule PortfolioTemplateWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :admin do
+    plug :basic_auth
+  end
+
   scope "/", PortfolioTemplateWeb do
     pipe_through :browser
 
     get "/", PageController, :home
     get "/works", PageController, :works
     get "/blog", PageController, :blog
+    get "/blog/:slug", PageController, :blog_post
+  end
+
+  scope "/admin/blog", PortfolioTemplateWeb do
+    pipe_through [:browser, :admin]
+
+    get "/", AdminController, :index
+    get "/new", AdminController, :new
+    post "/", AdminController, :create
+    get "/:id/edit", AdminController, :edit
+    post "/:id", AdminController, :update
+    post "/:id/delete", AdminController, :delete
   end
 
   # Other scopes may use custom stacks.
@@ -46,5 +62,12 @@ defmodule PortfolioTemplateWeb.Router do
 
   defp assign_current_path(conn, _opts) do
     Plug.Conn.assign(conn, :current_path, conn.request_path)
+  end
+
+  defp basic_auth(conn, _opts) do
+    username = System.get_env("ADMIN_USERNAME") || "admin"
+    password = System.get_env("ADMIN_PASSWORD") || "password"
+
+    Plug.BasicAuth.basic_auth(conn, username: username, password: password)
   end
 end

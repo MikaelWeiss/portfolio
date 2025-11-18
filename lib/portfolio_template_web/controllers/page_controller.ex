@@ -1,6 +1,7 @@
 defmodule PortfolioTemplateWeb.PageController do
   use PortfolioTemplateWeb, :controller
   alias PortfolioTemplate.Data
+  alias PortfolioTemplate.Blog
 
   def home(conn, _params) do
     render(conn, :home,
@@ -20,6 +21,18 @@ defmodule PortfolioTemplateWeb.PageController do
   end
 
   def blog(conn, _params) do
-    render(conn, :blog)
+    posts = Blog.list_published_posts()
+    render(conn, :blog, posts: posts)
+  end
+
+  def blog_post(conn, %{"slug" => slug}) do
+    case Blog.get_post_by_slug(slug) do
+      nil ->
+        conn
+        |> put_flash(:error, "Blog post not found")
+        |> redirect(to: ~p"/blog")
+      post ->
+        render(conn, :blog_post, post: post)
+    end
   end
 end

@@ -8,6 +8,7 @@
 import Config
 
 config :portfolio_template,
+  ecto_repos: [PortfolioTemplate.Repo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint

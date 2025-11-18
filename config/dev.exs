@@ -1,5 +1,15 @@
 import Config
 
+# Configure your database
+config :portfolio_template, PortfolioTemplate.Repo,
+  username: "mikaelweiss",
+  password: System.get_env("DATABASE_PASSWORD") || "postgres",
+  hostname: "localhost",
+  database: "portfolio_template_dev",
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

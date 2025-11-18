@@ -1,0 +1,30 @@
+<div class="py-12">
+  <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <.link navigate={~p"/admin/blog"} class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors">
+        <.icon name="hero-arrow-left" class="w-4 h-4" />
+        Back to Posts
+      </.link>
+    </div>
+
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-3xl font-bold text-text-primary-light dark:text-text-primary-dark">
+        Edit Blog Post
+      </h1>
+      <%= if @post.published_at && DateTime.compare(@post.published_at, DateTime.utc_now()) != :gt do %>
+        <.link
+          navigate={~p"/blog/#{@post.slug}"}
+          target="_blank"
+          class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors"
+        >
+          View Live
+          <.icon name="hero-arrow-top-right-on-square" class="w-4 h-4" />
+        </.link>
+      <% end %>
+    </div>
+
+    <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6">
+      <.post_form changeset={@changeset} action={~p"/admin/blog/#{@post.id}"} />
+    </div>
+  </div>
+</div>

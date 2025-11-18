@@ -9,6 +9,7 @@ defmodule PortfolioTemplate.Application do
   def start(_type, _args) do
     children = [
       PortfolioTemplateWeb.Telemetry,
+      PortfolioTemplate.Repo,
       {DNSCluster, query: Application.get_env(:portfolio_template, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PortfolioTemplate.PubSub},
       # Start a worker by calling: PortfolioTemplate.Worker.start_link(arg)

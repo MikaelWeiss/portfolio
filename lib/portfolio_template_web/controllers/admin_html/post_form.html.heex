@@ -1,0 +1,36 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+
+  <.input field={f[:title]} type="text" label="Title" required />
+  <.input field={f[:slug]} type="text" label="Slug" placeholder="leave blank to auto-generate from title" />
+  <.input field={f[:excerpt]} type="textarea" label="Excerpt" rows="3" />
+  <.input field={f[:content]} type="textarea" label="Content (Markdown)" rows="15" required />
+  <.input field={f[:cover_image]} type="text" label="Cover Image URL" placeholder="/images/blog/my-post.jpg" />
+  <.input field={f[:meta_description]} type="textarea" label="Meta Description (SEO)" rows="2" />
+
+  <div>
+    <label class="block text-sm font-semibold leading-6 text-text-primary-light dark:text-text-primary-dark mb-2">
+      Tags (comma-separated)
+    </label>
+    <input
+      type="text"
+      name="post[tags]"
+      value={if f[:tags].value, do: Enum.join(f[:tags].value || [], ", "), else: ""}
+      placeholder="elixir, phoenix, web development"
+      class="block w-full rounded-lg border-border-light dark:border-border-dark bg-background-tertiary-light dark:bg-background-tertiary-dark text-text-primary-light dark:text-text-primary-dark focus:border-brand focus:ring-brand sm:text-sm sm:leading-6"
+    />
+  </div>
+
+  <.input field={f[:published_at]} type="datetime-local" label="Publish Date & Time (leave blank for draft)" />
+
+  <div class="flex items-center gap-4">
+    <.button type="submit" class="bg-brand hover:bg-brand-dark text-white">
+      Save Post
+    </.button>
+    <.link navigate={~p"/admin/blog"} class="text-text-secondary-light dark:text-text-secondary-dark hover:text-brand">
+      Cancel
+    </.link>
+  </div>
+</.simple_form>

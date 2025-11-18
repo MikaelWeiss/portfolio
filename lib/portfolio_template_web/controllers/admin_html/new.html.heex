@@ -1,0 +1,18 @@
+<div class="py-12">
+  <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <.link navigate={~p"/admin/blog"} class="inline-flex items-center gap-2 text-brand hover:text-brand-dark transition-colors">
+        <.icon name="hero-arrow-left" class="w-4 h-4" />
+        Back to Posts
+      </.link>
+    </div>
+
+    <h1 class="text-3xl font-bold text-text-primary-light dark:text-text-primary-dark mb-8">
+      Create New Blog Post
+    </h1>
+
+    <div class="bg-background-tertiary-light/50 dark:bg-background-tertiary-dark/50 rounded-xl p-6">
+      <.post_form changeset={@changeset} action={~p"/admin/blog"} />
+    </div>
+  </div>
+</div>
