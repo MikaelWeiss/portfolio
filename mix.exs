@@ -56,6 +56,7 @@ defmodule PortfolioTemplate.MixProject do
       {:bandit, "~> 1.5"},
       {:ecto_sql, "~> 3.10"},
       {:postgrex, ">= 0.0.0"},
+      {:phoenix_ecto, "~> 4.4"},
       {:swoosh, "~> 1.14"},
       {:finch, "~> 0.16"},
       {:resend, "~> 0.4.0"},

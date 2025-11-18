@@ -50,7 +50,7 @@ defmodule PortfolioTemplate.Accounts do
           true ->
             # Mark token as used
             token
-            |> Ecto.Changeset.change(used_at: DateTime.utc_now())
+            |> Ecto.Changeset.change(used_at: DateTime.utc_now() |> DateTime.truncate(:second))
             |> Repo.update()
         end
     end

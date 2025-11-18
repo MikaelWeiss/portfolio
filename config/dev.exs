@@ -10,6 +10,18 @@ config :portfolio_template, PortfolioTemplate.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
+# Configure Resend for development
+# Set RESEND_API_KEY environment variable to use Resend
+# Otherwise falls back to Local adapter (emails viewable at /dev/mailbox)
+if resend_api_key = System.get_env("RESEND_API_KEY") do
+  config :portfolio_template, PortfolioTemplate.Mailer,
+    adapter: Resend.Swoosh.Adapter,
+    api_key: resend_api_key
+else
+  config :portfolio_template, PortfolioTemplate.Mailer,
+    adapter: Swoosh.Adapters.Local
+end
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

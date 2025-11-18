@@ -43,6 +43,6 @@ defmodule PortfolioTemplate.Subscriptions.Subscriber do
     changeset
     |> put_change(:verification_token, verification_token)
     |> put_change(:unsubscribe_token, unsubscribe_token)
-    |> put_change(:verification_sent_at, DateTime.utc_now())
+    |> put_change(:verification_sent_at, DateTime.utc_now() |> DateTime.truncate(:second))
   end
 end

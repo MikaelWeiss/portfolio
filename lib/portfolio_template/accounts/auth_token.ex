@@ -24,7 +24,7 @@ defmodule PortfolioTemplate.Accounts.AuthToken do
   """
   def create_token(email) do
     token = :crypto.strong_rand_bytes(32) |> Base.url_encode64(padding: false)
-    expires_at = DateTime.utc_now() |> DateTime.add(5, :minute)
+    expires_at = DateTime.utc_now() |> DateTime.add(5, :minute) |> DateTime.truncate(:second)
 
     %__MODULE__{
       token: token,

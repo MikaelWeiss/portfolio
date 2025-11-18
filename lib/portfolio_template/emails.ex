@@ -16,7 +16,7 @@ defmodule PortfolioTemplate.Emails do
 
     new()
     |> to(email)
-    |> from({"Mikael Weiss", "noreply@mikaelweiss.com"})
+    |> from({"Mikael Weiss", "noreply@mikaelweiss.dev"})
     |> subject("Your Admin Login Link")
     |> html_body("""
     <html>
@@ -52,7 +52,7 @@ defmodule PortfolioTemplate.Emails do
 
     new()
     |> to(email)
-    |> from({"Mikael Weiss", "noreply@mikaelweiss.com"})
+    |> from({"Mikael Weiss", "noreply@mikaelweiss.dev"})
     |> subject("Confirm Your Subscription")
     |> html_body("""
     <html>
@@ -91,7 +91,7 @@ defmodule PortfolioTemplate.Emails do
 
     new()
     |> to(email)
-    |> from({"Mikael Weiss", "noreply@mikaelweiss.com"})
+    |> from({"Mikael Weiss", "noreply@mikaelweiss.dev"})
     |> subject("New Post: #{post.title}")
     |> html_body("""
     <html>

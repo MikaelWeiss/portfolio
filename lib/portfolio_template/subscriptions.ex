@@ -39,7 +39,7 @@ defmodule PortfolioTemplate.Subscriptions do
         subscriber
         |> Subscriber.changeset(%{
           verified: true,
-          verified_at: DateTime.utc_now()
+          verified_at: DateTime.utc_now() |> DateTime.truncate(:second)
         })
         |> Repo.update()
     end

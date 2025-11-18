@@ -12,7 +12,8 @@ defmodule PortfolioTemplateWeb.Admin.DashboardLive do
      |> assign(:posts, posts)
      |> assign(:selected_post, nil)
      |> assign(:editing_post, new_post_changeset())
-     |> assign(:view_mode, :new)}
+     |> assign(:view_mode, :new),
+     layout: false}
   end
 
   @impl true

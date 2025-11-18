@@ -66,14 +66,14 @@ defmodule PortfolioTemplate.Blog.Post do
     if get_change(changeset, :last_updated) do
       changeset
     else
-      put_change(changeset, :last_updated, DateTime.utc_now())
+      put_change(changeset, :last_updated, DateTime.utc_now() |> DateTime.truncate(:second))
     end
   end
 
   defp maybe_set_published_at(changeset) do
     cond do
       get_change(changeset, :published) == true && is_nil(get_field(changeset, :published_at)) ->
-        put_change(changeset, :published_at, DateTime.utc_now())
+        put_change(changeset, :published_at, DateTime.utc_now() |> DateTime.truncate(:second))
 
       get_change(changeset, :published) == false ->
         put_change(changeset, :published_at, nil)
