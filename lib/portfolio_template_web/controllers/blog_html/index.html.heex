@@ -1,5 +1,5 @@
 <div class="min-h-screen bg-background-secondary-light dark:bg-background-secondary-dark">
-  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
+  <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
     <div class="text-center mb-20">
       <h1 class="text-5xl sm:text-6xl font-semibold text-text-primary-light dark:text-text-primary-dark mb-6 tracking-tight">
         Blog
@@ -21,7 +21,7 @@
         </p>
       </div>
     <% else %>
-      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 mb-24">
+      <div class="space-y-8 mb-24">
         <%= for post <- @posts do %>
           <article class="group card-refined overflow-hidden hover-lift">
             <a href={~p"/blog/#{post.slug}"} class="block">
@@ -61,37 +61,28 @@
       </div>
     <% end %>
 
-    <div class="max-w-2xl mx-auto">
-      <div class="card-refined p-10 text-center">
-        <div class="mb-6">
-          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand/10 dark:bg-brand/20 mb-6">
-            <svg class="w-7 h-7 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 class="text-2xl font-semibold text-text-primary-light dark:text-text-primary-dark mb-3">
-            Stay Updated
-          </h3>
-          <p class="text-base text-text-secondary-light dark:text-text-secondary-dark leading-relaxed">
+    <div class="max-w-5xl mx-auto">
+      <div class="card-refined p-6">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
             Get notified when I publish new posts
           </p>
+          <.form :let={f} for={%{}} action={~p"/subscribe"} method="post" class="flex gap-3 flex-shrink-0">
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              class="input-refined w-64"
+            />
+            <button
+              type="submit"
+              class="btn-primary whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </.form>
         </div>
-
-        <.form :let={f} for={%{}} action={~p"/subscribe"} method="post" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-          <input
-            type="email"
-            name="email"
-            placeholder="your@email.com"
-            required
-            class="input-refined flex-1"
-          />
-          <button
-            type="submit"
-            class="btn-primary whitespace-nowrap"
-          >
-            Subscribe
-          </button>
-        </.form>
       </div>
     </div>
   </div>
