@@ -1,4 +1,4 @@
-<div class="flex min-h-screen -mx-4 sm:-mx-6 lg:-mx-8 -my-12">
+<div class="flex min-h-full">
       <aside class="w-96 bg-background-primary-light dark:bg-background-primary-dark border-r border-border-light dark:border-border-light-dark overflow-y-auto">
         <div class="p-6 border-b border-border-light dark:border-border-light-dark">
           <div class="flex items-center justify-between mb-6">
@@ -79,8 +79,8 @@
       </aside>
 
       <main class="flex-1 overflow-y-auto">
-        <div class="max-w-5xl mx-auto p-8 lg:p-12">
-          <div class="card-refined p-10">
+        <div class="p-10">
+          <div class="bg-background-primary-light dark:bg-background-primary-dark p-10">
             <h2 class="text-3xl font-semibold text-text-primary-light dark:text-text-primary-dark mb-8 tracking-tight">
               <%= if @view_mode == :new, do: "Create New Post", else: "Edit Post" %>
             </h2>
