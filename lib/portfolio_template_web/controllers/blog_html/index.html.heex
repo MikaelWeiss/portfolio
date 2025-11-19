@@ -1,4 +1,4 @@
-<div class="min-h-screen bg-background-secondary-light dark:bg-background-secondary-dark">
+<div class="min-h-screen">
   <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
     <div class="text-center mb-20">
       <h1 class="text-5xl sm:text-6xl font-semibold text-text-primary-light dark:text-text-primary-dark mb-6 tracking-tight">
@@ -12,8 +12,18 @@
     <%= if Enum.empty?(@posts) do %>
       <div class="text-center py-24">
         <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-background-tertiary-light dark:bg-background-tertiary-dark mb-6">
-          <svg class="w-8 h-8 text-text-tertiary-light dark:text-text-tertiary-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          <svg
+            class="w-8 h-8 text-text-tertiary-light dark:text-text-tertiary-dark"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            />
           </svg>
         </div>
         <p class="text-lg text-text-secondary-light dark:text-text-secondary-dark">
@@ -38,21 +48,22 @@
 
               <div class="p-8">
                 <h2 class="text-2xl font-semibold text-text-primary-light dark:text-text-primary-dark mb-4 tracking-tight group-hover:text-brand dark:group-hover:text-brand-light transition-colors duration-250">
-                  <%= post.title %>
+                  {post.title}
                 </h2>
 
                 <%= if post.excerpt do %>
                   <p class="text-base text-text-secondary-light dark:text-text-secondary-dark leading-relaxed mb-6 line-clamp-3">
-                    <%= post.excerpt %>
+                    {post.excerpt}
                   </p>
                 <% end %>
 
                 <div class="flex items-center gap-3 text-sm text-text-tertiary-light dark:text-text-tertiary-dark">
                   <time datetime={post.published_at} class="font-medium">
-                    <%= format_date(post.published_at) %>
+                    {format_date(post.published_at)}
                   </time>
-                  <span class="w-1 h-1 rounded-full bg-text-tertiary-light dark:bg-text-tertiary-dark"></span>
-                  <span><%= reading_time(post.content) %></span>
+                  <span class="w-1 h-1 rounded-full bg-text-tertiary-light dark:bg-text-tertiary-dark">
+                  </span>
+                  <span>{reading_time(post.content)}</span>
                 </div>
               </div>
             </a>
@@ -67,7 +78,13 @@
           <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
             Get notified when I publish new posts
           </p>
-          <.form :let={_f} for={%{}} action={~p"/subscribe"} method="post" class="flex gap-3 flex-shrink-0">
+          <.form
+            :let={_f}
+            for={%{}}
+            action={~p"/subscribe"}
+            method="post"
+            class="flex gap-3 flex-shrink-0"
+          >
             <input
               type="email"
               name="email"
@@ -75,10 +92,7 @@
               required
               class="input-refined w-64"
             />
-            <button
-              type="submit"
-              class="btn-primary whitespace-nowrap"
-            >
+            <button type="submit" class="btn-primary whitespace-nowrap">
               Subscribe
             </button>
           </.form>
