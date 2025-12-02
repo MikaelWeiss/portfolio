@@ -36,28 +36,30 @@ if config_env() == :prod do
   config :portfolio_template, PortfolioTemplate.Repo,
     url: database_url,
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-    socket_options: [:inet6]
+    socket_dir: "/var/run/postgresql"
 
   # Configure email adapter for production
   # Default to Resend for production
   # Set EMAIL_ADAPTER environment variable to override
   maybe_email_adapter = System.get_env("EMAIL_ADAPTER") || "resend"
 
-  email_adapter = case maybe_email_adapter do
-    "resend" -> Resend.Swoosh.Adapter
-    "postmark" -> Swoosh.Adapters.Postmark
-    "mailgun" -> Swoosh.Adapters.Mailgun
-    "sendgrid" -> Swoosh.Adapters.Sendgrid
-    "local" -> Swoosh.Adapters.Local
-    _ -> Resend.Swoosh.Adapter
-  end
+  email_adapter =
+    case maybe_email_adapter do
+      "resend" -> Resend.Swoosh.Adapter
+      "postmark" -> Swoosh.Adapters.Postmark
+      "mailgun" -> Swoosh.Adapters.Mailgun
+      "sendgrid" -> Swoosh.Adapters.Sendgrid
+      "local" -> Swoosh.Adapters.Local
+      _ -> Resend.Swoosh.Adapter
+    end
 
   # For Resend, use RESEND_API_KEY
   # For other adapters, use EMAIL_API_KEY
-  api_key = case email_adapter do
-    Resend.Swoosh.Adapter -> System.get_env("RESEND_API_KEY")
-    _ -> System.get_env("EMAIL_API_KEY")
-  end
+  api_key =
+    case email_adapter do
+      Resend.Swoosh.Adapter -> System.get_env("RESEND_API_KEY")
+      _ -> System.get_env("EMAIL_API_KEY")
+    end
 
   config :portfolio_template, PortfolioTemplate.Mailer,
     adapter: email_adapter,
