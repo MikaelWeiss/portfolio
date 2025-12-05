@@ -1,5 +1,6 @@
 defmodule PortfolioTemplateWeb.Router do
   use PortfolioTemplateWeb, :router
+  import Phoenix.LiveDashboard.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -49,6 +50,7 @@ defmodule PortfolioTemplateWeb.Router do
     pipe_through :require_admin
 
     live "/", DashboardLive
+    live_dashboard "/dashboard", metrics: PortfolioTemplateWeb.Telemetry
   end
 
   # Other scopes may use custom stacks.
