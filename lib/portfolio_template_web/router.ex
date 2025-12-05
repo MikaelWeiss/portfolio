@@ -50,7 +50,12 @@ defmodule PortfolioTemplateWeb.Router do
     pipe_through :require_admin
 
     live "/", DashboardLive
-    live_dashboard "/dashboard", metrics: PortfolioTemplateWeb.Telemetry
+  end
+
+  scope "/dashboard" do
+    pipe_through :require_admin
+
+    live_dashboard "/", metrics: PortfolioTemplateWeb.Telemetry
   end
 
   # Other scopes may use custom stacks.
