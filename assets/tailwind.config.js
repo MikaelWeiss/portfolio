@@ -1,6 +1,3 @@
-// See the Tailwind configuration guide for advanced usage
-// https://tailwindcss.com/docs/configuration
-
 const plugin = require("tailwindcss/plugin")
 const fs = require("fs")
 const path = require("path")
@@ -15,151 +12,146 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Background Colors
-        background: {
-          primary: {
-            light: '#FFFFFF',
-            dark: '#0A0A0A'
-          },
-          secondary: {
-            light: '#FAFAFA',
-            dark: '#1A1A1A'
-          },
-          tertiary: {
-            light: '#F5F5F5',
-            dark: '#2A2A2A'
-          }
+        surface: {
+          primary: '#0D0D0D',
+          secondary: '#141414',
+          tertiary: '#1A1A1A',
+          elevated: '#242424',
         },
-        // Text Colors
-        text: {
-          primary: {
-            light: '#111827',
-            dark: '#FAFAFA'
-          },
-          secondary: {
-            light: '#6B7280',
-            dark: '#A1A1A1'
-          },
-          tertiary: {
-            light: '#9CA3AF',
-            dark: '#737373'
-          }
+        ink: {
+          primary: '#F5F0E8',
+          secondary: '#B8B0A0',
+          tertiary: '#706B63',
+          muted: '#4A4640',
         },
-        // Brand Colors
-        brand: {
-          DEFAULT: '#4F46E5',
-          dark: '#4338CA',
-          light: '#6366F1'
-        },
-        // Accent Colors
         accent: {
-          DEFAULT: '#E11D48',
-          dark: '#BE123C',
-          light: '#F43F5E'
+          warm: '#FF6B35',
+          warmDark: '#E55A2B',
+          warmLight: '#FF8255',
+          electric: '#00D4FF',
+          electricDark: '#00B8E0',
         },
-        // Border Colors
         border: {
-          light: {
-            DEFAULT: '#E5E7EB',
-            dark: '#2A2A2A'
-          },
-          medium: {
-            DEFAULT: '#D1D5DB',
-            dark: '#3A3A3A'
-          }
+          subtle: '#2A2A2A',
+          medium: { DEFAULT: '#3A3A3A', dark: '#3A3A3A' },
+          strong: '#4A4A4A',
+          light: { DEFAULT: '#E5E7EB', dark: '#2A2A2A' },
         },
-        // Utility Colors
+        brand: {
+          DEFAULT: '#FF6B35',
+          dark: '#E55A2B',
+          light: '#FF8255'
+        },
+        background: {
+          primary: { light: '#FFFFFF', dark: '#0D0D0D' },
+          secondary: { light: '#FAFAFA', dark: '#141414' },
+          tertiary: { light: '#F5F5F5', dark: '#1A1A1A' }
+        },
+        text: {
+          primary: { light: '#111827', dark: '#F5F0E8' },
+          secondary: { light: '#6B7280', dark: '#B8B0A0' },
+          tertiary: { light: '#9CA3AF', dark: '#706B63' }
+        },
         utility: {
           success: '#10B981',
           error: '#EF4444'
         }
       },
       fontFamily: {
-        sans: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"SF Pro Display"',
-          '"Segoe UI"',
-          'Roboto',
-          'Oxygen',
-          'Ubuntu',
-          'Cantarell',
-          '"Helvetica Neue"',
-          'Arial',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"'
-        ],
-        serif: [
-          '"SF Pro Display"',
-          'ui-serif',
-          'Georgia',
-          'Cambria',
-          '"Times New Roman"',
-          'Times',
-          'serif'
-        ]
+        display: ['Syne', 'system-ui', 'sans-serif'],
+        body: ['"Cabinet Grotesk"', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'Menlo', 'Monaco', 'monospace'],
       },
       fontSize: {
-        '2xs': ['0.625rem', { lineHeight: '1rem' }],
-        'xs': ['0.75rem', { lineHeight: '1.125rem' }],
-        'sm': ['0.875rem', { lineHeight: '1.375rem' }],
-        'base': ['1rem', { lineHeight: '1.75rem' }],
-        'lg': ['1.125rem', { lineHeight: '1.875rem' }],
-        'xl': ['1.25rem', { lineHeight: '2rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2.25rem' }],
-        '3xl': ['1.875rem', { lineHeight: '2.5rem' }],
-        '4xl': ['2.25rem', { lineHeight: '2.75rem' }],
-        '5xl': ['3rem', { lineHeight: '3.5rem' }],
-        '6xl': ['3.75rem', { lineHeight: '4rem' }]
-      },
-      lineHeight: {
-        'relaxed': '1.75',
-        'loose': '1.875'
+        'hero': ['clamp(3.5rem, 12vw, 10rem)', { lineHeight: '0.9', letterSpacing: '-0.04em', fontWeight: '800' }],
+        'display-xl': ['clamp(2.5rem, 8vw, 6rem)', { lineHeight: '0.95', letterSpacing: '-0.03em', fontWeight: '700' }],
+        'display-lg': ['clamp(2rem, 5vw, 4rem)', { lineHeight: '1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-md': ['clamp(1.5rem, 3vw, 2.5rem)', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '600' }],
+        'body-xl': ['1.375rem', { lineHeight: '1.6' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.7' }],
+        'body': ['1rem', { lineHeight: '1.75' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.6' }],
+        'label': ['0.75rem', { lineHeight: '1.4', letterSpacing: '0.08em', fontWeight: '500' }],
       },
       spacing: {
         '18': '4.5rem',
+        '22': '5.5rem',
+        '30': '7.5rem',
         '88': '22rem',
-        '112': '28rem',
-        '128': '32rem'
+        '100': '25rem',
+        '120': '30rem',
+        '140': '35rem',
       },
-      boxShadow: {
-        'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.03)',
-        'sm': '0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.06)',
-        'DEFAULT': '0 2px 4px -1px rgba(0, 0, 0, 0.08), 0 4px 6px -1px rgba(0, 0, 0, 0.08)',
-        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08)',
-        'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08)',
-        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08)',
-        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
-        'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)'
+      animation: {
+        'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'fade-in': 'fadeIn 0.6s ease-out forwards',
+        'slide-in-right': 'slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'scale-in': 'scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'marquee': 'marquee 30s linear infinite',
+        'marquee-reverse': 'marquee 30s linear infinite reverse',
+        'grain': 'grain 8s steps(10) infinite',
+        'pulse-slow': 'pulse 4s ease-in-out infinite',
       },
-      transitionDuration: {
-        '250': '250ms',
-        '350': '350ms'
+      keyframes: {
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideInRight: {
+          '0%': { opacity: '0', transform: 'translateX(-60px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        grain: {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '10%': { transform: 'translate(-5%, -10%)' },
+          '20%': { transform: 'translate(-15%, 5%)' },
+          '30%': { transform: 'translate(7%, -25%)' },
+          '40%': { transform: 'translate(-5%, 25%)' },
+          '50%': { transform: 'translate(-15%, 10%)' },
+          '60%': { transform: 'translate(15%, 0%)' },
+          '70%': { transform: 'translate(0%, 15%)' },
+          '80%': { transform: 'translate(3%, 35%)' },
+          '90%': { transform: 'translate(-10%, 10%)' },
+        },
       },
       transitionTimingFunction: {
-        'apple': 'cubic-bezier(0.4, 0.0, 0.2, 1)'
+        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'in-out-expo': 'cubic-bezier(0.87, 0, 0.13, 1)',
       },
-      backdropBlur: {
-        'xs': '2px'
-      }
+      transitionDuration: {
+        '400': '400ms',
+        '600': '600ms',
+        '800': '800ms',
+      },
+      backgroundImage: {
+        'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      boxShadow: {
+        'glow': '0 0 60px -12px rgba(255, 107, 53, 0.4)',
+        'glow-lg': '0 0 100px -20px rgba(255, 107, 53, 0.5)',
+        'inner-glow': 'inset 0 0 60px -12px rgba(255, 107, 53, 0.15)',
+      },
     },
   },
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
-    // Allows prefixing tailwind classes with LiveView classes to add rules
-    // only when LiveView classes are applied, for example:
-    //
-    //     <div class="phx-click-loading:animate-ping">
-    //
     plugin(({addVariant}) => addVariant("phx-click-loading", [".phx-click-loading&", ".phx-click-loading &"])),
     plugin(({addVariant}) => addVariant("phx-submit-loading", [".phx-submit-loading&", ".phx-submit-loading &"])),
     plugin(({addVariant}) => addVariant("phx-change-loading", [".phx-change-loading&", ".phx-change-loading &"])),
-
-    // Embeds Heroicons (https://heroicons.com) into your app.css bundle
-    // See your `CoreComponents.icon/1` for more information.
-    //
     plugin(function({matchComponents, theme}) {
       let iconsDir = path.join(__dirname, "../deps/heroicons/optimized")
       let values = {}

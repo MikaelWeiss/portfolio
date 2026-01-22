@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" class="[scrollbar-gutter:stable]">
+<html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title suffix=" · Portfolio">
-      {assigns[:page_title] || "Mikael Weiss"}
+    <meta name="theme-color" content="#0D0D0D" />
+    <meta name="description" content="Mikael Weiss - iOS Developer, Entrepreneur, and Engineer. Building intuitive mobile experiences with Swift and SwiftUI." />
+
+    <.live_title suffix=" — Mikael Weiss">
+      {assigns[:page_title] || "iOS Developer"}
     </.live_title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
+
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
-    <script>
-      // Immediately set the theme before the page loads
-      let theme = localStorage.getItem('theme');
-      if (!theme) {
-        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
-    </script>
-    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
-    </script>
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}></script>
     <link rel="icon" href={~p"/images/favicon.svg"} sizes="any" />
   </head>
-  <body class="bg-white">
+  <body class="bg-surface-primary">
     {@inner_content}
   </body>
 </html>
