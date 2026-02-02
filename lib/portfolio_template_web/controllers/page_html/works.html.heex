@@ -22,11 +22,11 @@
               <%= if Map.get(project.links, :live) do %>
                 <a href={project.links.live} target="_blank" rel="noopener noreferrer" class="block group">
                   <div class="relative overflow-hidden bg-surface-secondary border border-border-subtle">
-                    <div class="aspect-[16/10] overflow-hidden">
+                    <div class="aspect-[16/10] overflow-hidden bg-surface-tertiary">
                       <img
                         src={project.image}
                         alt={project.title}
-                        class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                        class="w-full h-full object-contain transition-all duration-700 group-hover:scale-105"
                       />
                     </div>
                     <div class="absolute inset-0 bg-gradient-to-t from-surface-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -42,11 +42,11 @@
                 </a>
               <% else %>
                 <div class="relative overflow-hidden bg-surface-secondary border border-border-subtle">
-                  <div class="aspect-[16/10] overflow-hidden">
+                  <div class="aspect-[16/10] overflow-hidden bg-surface-tertiary">
                     <img
                       src={project.image}
                       alt={project.title}
-                      class="w-full h-full object-cover"
+                      class="w-full h-full object-contain"
                     />
                   </div>
                 </div>
@@ -117,7 +117,7 @@
         I'm always excited to work on new challenges. Whether it's a mobile app, web project, or something entirely different - let's talk.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:mikaelweiss@icloud.com" class="btn-primary">
+        <a href="mailto:mikael.weiss@weisssolutions.org" class="btn-primary">
           Get In Touch
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

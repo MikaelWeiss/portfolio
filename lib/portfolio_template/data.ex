@@ -3,8 +3,8 @@ defmodule PortfolioTemplate.Data do
   {
     "personal": {
       "name": "Mikael Weiss",
-      "title": "App Developer • Entrepreneur • Pilot • Engineer",
-      "expertise": ["Swift", "SwiftData", "SwiftUI", "UIKit"],
+      "title": "iOS Developer • Entrepreneur • Pilot",
+      "expertise": ["Swift", "SwiftUI", "SwiftData", "Voice AI"],
       "images": {
         "profile": "/images/profile.jpg",
         "about": "/images/about.jpg"
@@ -33,15 +33,15 @@ defmodule PortfolioTemplate.Data do
       ]
     },
     "about": {
-      "description": "I am a passionate iOS developer focused on creating intuitive and impactful mobile applications. With deep expertise in Swift and SwiftUI, I specialize in building performant, scalable apps that delight users. I thrive on leveraging cutting-edge technologies to solve complex problems while maintaining clean, maintainable code.",
+      "description": "iOS Developer with 5+ years of experience building innovative mobile applications. Led technical teams, architected complex real-time AI voice systems, and shipped 5+ iOS apps with 1,500+ downloads. Expert in SwiftUI, code architecture, and AI-augmented development workflows.",
       "stats": [
         {
-          "value": "3+",
+          "value": "5+",
           "label": "Years Experience"
         },
         {
-          "value": "20+",
-          "label": "Projects Completed"
+          "value": "1,500+",
+          "label": "App Downloads"
         }
       ]
     },
@@ -51,66 +51,76 @@ defmodule PortfolioTemplate.Data do
         "items": [
           {
             "name": "SwiftUI",
-            "years": "3 years",
+            "years": "5 years",
             "proficiency": 100
           },
           {
             "name": "UIKit",
-            "years": "2 years",
-            "proficiency": 75
+            "years": "3 years",
+            "proficiency": 80
           }
         ]
       },
       "backend": {
-        "title": "Web Development",
+        "title": "Backend & Tools",
         "items": [
           {
-            "name": "Elixir/Phoenix",
+            "name": "Python/FastAPI",
             "years": "1 year",
-            "proficiency": 50
+            "proficiency": 60
           },
           {
-            "name": "PostgreSQL",
+            "name": "Supabase",
             "years": "1 year",
-            "proficiency": 50
+            "proficiency": 70
           }
         ]
       },
       "other": {
         "title": "Other Skills",
-        "items": ["Git", "GitHub", "SwiftData", "Combine", "Xcode", "Architecture", "Spanish"]
+        "items": ["Voice AI Integration", "OpenAI APIs", "SwiftData", "WCAG Accessibility", "Clean Architecture", "Team Leadership", "Spanish"]
       }
     },
     "experience": [
       {
-        "title": "iOS Mobile Developer Intern",
-        "company": "Family Search",
-        "period": "Jan 2025 - Current",
+        "title": "Lead Developer",
+        "company": "OpSync Services LLC",
+        "period": "Mar 2025 - Nov 2025",
         "description": [
-          "Worked on the FamilySearch iOS app",
-          "Applied state-of-the-art API's including SwiftUI"
+          "Built iOS and Android app for pest control technicians with AI chatbot and voice-to-voice role-play",
+          "Solved complex PCM audio streaming challenge for real-time OpenAI TTS integration",
+          "Led remote team of 3, established CI/CD with Xcode Cloud, deployed updates 1-2x weekly"
         ],
-        "technologies": ["SwiftUI", "iOS", "APIs"]
+        "technologies": ["SwiftUI", "Voice AI", "OpenAI", "Python", "Supabase"]
       },
       {
-        "title": "Chief Executive Officer & Lead Developer",
-        "company": "Weiss Solutions LLC",
-        "period": "Oct 2023 - Current",
+        "title": "iOS Developer Intern",
+        "company": "FamilySearch",
+        "period": "Jan 2025 - Apr 2025",
         "description": [
-          "Built 'Sherpa' iOS app from ground zero to App Store in 2 months",
-          "Co-developed a system for quickly building iOS apps with good architecture",
-          "Applied state-of-the-art API's including SwiftUI and SwiftData"
+          "Modernized Swift code to use async/await affecting 10,000+ lines of code, fixing 100+ related bugs",
+          "Enhanced WCAG accessibility fixing 100+ related issues affecting thousands of customers daily"
         ],
-        "technologies": ["SwiftUI", "SwiftData", "iOS"]
+        "technologies": ["Swift", "Async/Await", "Accessibility"]
+      },
+      {
+        "title": "Founder & Lead iOS Developer",
+        "company": "Weiss Solutions LLC",
+        "period": "Oct 2023 - Present",
+        "description": [
+          "Launched 5+ iOS apps for clients including High Country Living, Bryce Labs, and AskElephant",
+          "Developed Strive Planner iOS app: 2,000+ downloads, 5-star rating",
+          "Created reusable architecture system for rapidly building new iOS apps with consistent quality"
+        ],
+        "technologies": ["SwiftUI", "SwiftData", "Clean Architecture"]
       },
       {
         "title": "iOS App Developer",
         "company": "Elements Financial",
         "period": "Aug 2020 - Jun 2021",
         "description": [
-          "Cooperated with other developers to separate and perform tasks based on priorities",
-          "Collaborated with a cross-functional team, including designers and full-stack developers",
-          "Resolved a set of 56 bugs in the span of a month as estimated"
+          "Collaborated with cross-functional team including designers, developers, and marketing",
+          "Started as unpaid intern and ended as contractor"
         ],
         "technologies": ["Swift", "iOS", "UIKit"]
       }
@@ -118,77 +128,66 @@ defmodule PortfolioTemplate.Data do
     "projects": {
       "featured": [
         {
+          "title": "Open Chat",
+          "category": "Desktop App",
+          "image": "/images/openchat.png",
+          "description": "Cross-platform AI chat client with multi-provider support (Anthropic, OpenAI, Ollama). Secure API key management, persistent conversations, modern UI.",
+          "technologies": ["Tauri", "React", "TypeScript", "Rust"],
+          "links": {
+            "website": "https://openchat.weisssolutions.org",
+            "github": "https://github.com/MikaelWeiss/openchat"
+          }
+        },
+        {
+          "title": "OpSync",
+          "category": "iOS & Android App",
+          "image": "/images/opsync.png",
+          "description": "AI training platform for pest control teams with voice-to-voice role-play and real-time coaching. Built as Lead Developer with team of 3.",
+          "technologies": ["SwiftUI", "Voice AI", "OpenAI", "Python"],
+          "links": {
+            "website": "https://opsyncservices.com",
+            "live": "https://apps.apple.com/us/app/opsync/id6743721267"
+          }
+        },
+        {
+          "title": "Strive Planner",
+          "category": "iOS App",
+          "image": "/images/strive.png",
+          "description": "Calendar app with iCal recurrence, goal tracking, and person-event relationships. Philosophy: intentionality over productivity. 2,000+ downloads, 5-star rating.",
+          "technologies": ["SwiftUI", "SwiftData", "iOS"],
+          "links": {
+            "live": "https://apps.apple.com/us/app/strive-planner/id6472100413",
+            "website": "https://striveplanner.org"
+          }
+        },
+        {
           "title": "Sherpa",
           "category": "iOS App",
-          "image": "/images/sherpa.jpeg",
-          "description": "Built from ground zero to App Store in 2 months",
+          "image": "/images/sherpa.png",
+          "description": "Your everyday guide to help you remember the important things and do what matters most. Built for High Country Living, 5-star rating.",
           "technologies": ["SwiftUI", "SwiftData", "iOS"],
           "links": {
             "live": "https://apps.apple.com/us/app/sherpa-your-everday-guide/id6474707966"
           }
-        },
-        {
-          "title": "Strive",
-          "category": "iOS App",
-          "image": "/images/strive.png",
-          "description": "Personal project to help me stay on top of my goals.",
-          "technologies": ["SwiftUI", "iOS", "SwiftData"],
-          "links": {
-            "live": "https://apps.apple.com/us/app/strive-planner/id6472100413"
-          }
-        },
-        {
-          "title": "Portfolio Website",
-          "category": "Web Dev",
-          "image": "/images/rachelweiss.png",
-          "description": "Built a portfolio website for my sister Rachel to showcase her work and skills.",
-          "technologies": ["Astro", "LLM", "CSS"],
-          "links": {
-            "live": "https://rachelweiss.me",
-            "github": "https://github.com/MikaelWeiss/rachel-portfolio"
-          }
-        },
-        {
-          "title": "Strive Planner Website",
-          "category": "Web Dev",
-          "image": "/images/striveplanner.png",
-          "description": "Built a website for my personal project Strive Planner to showcase its features and capabilities.",
-          "technologies": ["Elixir", "Phoenix", "TailwindCSS"],
-          "links": {
-            "live": "https://striveplanner.org",
-            "github": "https://github.com/MikaelWeiss/striveplanner"
-          }
         }
       ],
-      "all": [
-        {
-          "title": "Inventory",
-          "category": "iOS App",
-          "image": "/images/inventory.jpeg",
-          "description": "Personal project made to help small business keep track of their inventory.",
-          "technologies": ["SwiftUI", "iOS", "SwiftData"],
-          "links": {
-            "live": "https://apps.apple.com/us/app/inventory-projects-organizer/id1581850111",
-            "github": "https://github.com/Fifty6-Inc/Inventory"
-          }
-        }
-      ]
+      "all": []
     },
     "awards": [
       {
         "title": "Eagle Scout",
         "year": "2019",
-        "description": "Assembled and delivered pillow kits for children at Children's Hospital, organizing an event with 60 volunteers",
+        "description": "Organized 60-volunteer event delivering children's hospital pillow kits, helping children have a fun project during their stay.",
         "icon": "badge"
       }
     ],
     "volunteer": [
       {
-        "title": "LDS Church Missionary",
-        "organization": "LDS Church",
+        "title": "LDS Mission (Spanish)",
+        "organization": "The Church of Jesus Christ of Latter-day Saints",
         "period": "Oct 2021 - Oct 2023",
-        "description": "Collaborated with diverse populations in Kansas, Colorado, and Oklahoma, providing support and promoting cultural understanding while leading a small group of missionaries",
-        "tags": ["Spanish", "Leadership", "Cultural Understanding"],
+        "description": "Led missionary teams in training, planning, and goal achievement. Learned systems of goal setting and scheduling that I now implement in Strive Planner.",
+        "tags": ["Spanish", "Leadership", "Goal Setting"],
         "icon": "heart"
       }
     ],
@@ -196,9 +195,9 @@ defmodule PortfolioTemplate.Data do
       {
         "degree": "Computer Science",
         "school": "Brigham Young University - Idaho",
-        "period": "Jan 2024 - May 2027",
-        "description": "Currently pursuing degree with a 3.9 GPA. Coursework includes C#, Electronic Systems, MySQL, and Web Development",
-        "tags": ["C#", "MySQL", "Web Development", "HTML", "CSS"]
+        "period": "Jan 2024 - Jul 2027",
+        "description": "Currently pursuing degree with a 3.9 GPA. President of the Mobile Computing Society and Assistant to the President of the Computing Society.",
+        "tags": ["Leadership", "Mobile Computing", "Software Engineering"]
       }
     ]
   }

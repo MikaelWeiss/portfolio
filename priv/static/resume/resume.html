@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mikael Weiss - Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.3;
+      color: #333;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.4in;
+      background: #fff;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #2563eb;
+    }
+
+    h1 {
+      font-size: 24pt;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 11pt;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 10pt;
+    }
+
+    .contact-links a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    section {
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #1e293b;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .summary {
+      font-size: 10.5pt;
+      color: #475569;
+    }
+
+    .entry {
+      margin-bottom: 8px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-weight: 600;
+      font-size: 11pt;
+      color: #1e293b;
+    }
+
+    .entry-period {
+      font-size: 10pt;
+      color: #64748b;
+    }
+
+    .entry-subtitle {
+      font-size: 10.5pt;
+      color: #2563eb;
+      margin-bottom: 4px;
+    }
+
+    .entry-description {
+      font-size: 10pt;
+      color: #475569;
+    }
+
+    .entry-description ul {
+      margin-left: 16px;
+    }
+
+    .entry-description li {
+      margin-bottom: 2px;
+    }
+
+    .skills-inline {
+      font-size: 10pt;
+      color: #475569;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .project {
+      padding: 8px;
+      background: #f8fafc;
+      border-radius: 4px;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 10.5pt;
+      color: #1e293b;
+    }
+
+    .project-tech {
+      font-size: 9pt;
+      color: #2563eb;
+      margin-bottom: 2px;
+    }
+
+    .project-description {
+      font-size: 9.5pt;
+      color: #475569;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 9pt;
+      color: #2563eb;
+      background: #eff6ff;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    @media print {
+      body {
+        padding: 0.3in;
+      }
+
+      @page {
+        margin: 0.4in;
+        size: letter;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      section {
+        page-break-inside: avoid;
+      }
+
+      .entry {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mikael Weiss</h1>
+    <p class="title">iOS Developer • Entrepreneur • Pilot</p>
+    <div class="contact-links">
+      <span>307-226-5183</span>
+      <a href="mailto:mikael.weiss@weisssolutions.org">mikael.weiss@weisssolutions.org</a>
+      <a href="https://www.linkedin.com/in/mikael-weiss/">LinkedIn</a>
+      <a href="https://github.com/MikaelWeiss">GitHub</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p class="summary">
+      iOS Developer with 5+ years of experience shipping production apps used by thousands. Architected real-time voice AI systems, modernized 10,000+ lines of legacy code, and built apps with 2,000+ downloads and 5-star ratings. Combines deep SwiftUI expertise with proven team leadership.
+    </p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Lead Developer</span>
+        <span class="entry-period">Mar 2025 - Nov 2025</span>
+      </div>
+      <div class="entry-subtitle">OpSync Services LLC</div>
+      <div class="entry-description">
+        <ul>
+          <li>Architected iOS and Android training app with real-time AI voice role-play for 50+ pest control technicians</li>
+          <li>Engineered PCM audio streaming pipeline for sub-second OpenAI voice integration latency</li>
+          <li>Led team of 3 developers; established CI/CD with Xcode Cloud shipping 1-2 releases weekly</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">iOS Developer Intern</span>
+        <span class="entry-period">Jan 2025 - Apr 2025</span>
+      </div>
+      <div class="entry-subtitle">FamilySearch</div>
+      <div class="entry-description">
+        <ul>
+          <li>Modernized Swift code to use async/await affecting 10,000+ lines of code, fixing 100+ related bugs</li>
+          <li>Enhanced WCAG accessibility fixing 100+ related issues affecting thousands of customers daily</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Founder & Lead iOS Developer</span>
+        <span class="entry-period">Oct 2023 - Present</span>
+      </div>
+      <div class="entry-subtitle">Weiss Solutions LLC</div>
+      <div class="entry-description">
+        <ul>
+          <li>Launched 5+ iOS apps for clients including High Country Living, Bryce Labs, and AskElephant</li>
+          <li>Developed Strive Planner iOS app: 2,000+ downloads, 5-star rating</li>
+          <li>Created reusable architecture system for rapidly building new iOS apps with consistent quality</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">iOS App Developer</span>
+        <span class="entry-period">Aug 2020 - Jun 2021</span>
+      </div>
+      <div class="entry-subtitle">Elements Financial</div>
+      <div class="entry-description">
+        <ul>
+          <li>Developed features for financial planning iOS app serving credit union members</li>
+          <li>Promoted from intern to contractor based on code quality and delivery speed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <p class="skills-inline"><strong>iOS:</strong> SwiftUI, UIKit, SwiftData, Combine, Clean Architecture &nbsp;•&nbsp; <strong>Backend:</strong> Voice AI, OpenAI APIs, Python, Supabase &nbsp;•&nbsp; <strong>Other:</strong> Team Leadership, WCAG Accessibility, Spanish</p>
+  </section>
+
+  <section>
+    <h2>Education & Leadership</h2>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">B.S. Computer Science</span>
+        <span class="entry-period">Jan 2024 - Jul 2027</span>
+      </div>
+      <div class="entry-subtitle">Brigham Young University - Idaho</div>
+      <div class="entry-description">
+        <p>3.9 GPA • President, Mobile Computing Society • VP, Computing Society</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">LDS Missionary Service (Spanish-speaking)</span>
+        <span class="entry-period">Oct 2021 - Oct 2023</span>
+      </div>
+      <div class="entry-description">
+        <p>Led and trained teams of 10-20 volunteers; developed goal-setting systems now implemented in Strive Planner</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

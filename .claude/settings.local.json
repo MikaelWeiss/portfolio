@@ -3,7 +3,16 @@
     "allow": [
       "Bash(find:*)",
       "WebSearch",
-      "Skill(frontend-design:frontend-design)"
+      "Skill(frontend-design:frontend-design)",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)",
+      "mcp__peekaboo__app",
+      "mcp__peekaboo__sleep",
+      "mcp__peekaboo__image",
+      "Bash(ls:*)",
+      "mcp__peekaboo__list",
+      "Bash(magick:*)",
+      "Bash(mix compile:*)"
     ],
     "deny": []
   }

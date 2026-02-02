@@ -18,7 +18,7 @@ defmodule PortfolioTemplateWeb do
   """
 
   def static_paths,
-    do: ~w(assets fonts images favicon.svg robots.txt resume-mikael-weiss.pdf)
+    do: ~w(assets fonts images favicon.svg robots.txt resume)
 
   def router do
     quote do

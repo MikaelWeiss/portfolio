@@ -7,7 +7,7 @@ defmodule PortfolioTemplate.Accounts do
   alias PortfolioTemplate.Repo
   alias PortfolioTemplate.Accounts.AuthToken
 
-  @admin_email "campingmikael@icloud.com"
+  @admin_email "mikael.weiss@weisssolutions.org"
 
   @doc """
   Creates a new magic link token for the admin user.

@@ -22,7 +22,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
-          <a href="/resume-mikael-weiss.pdf" download class="btn-outline">
+          <a href="/resume/mikael-weiss-resume.pdf" download class="btn-outline">
             Resume
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -43,8 +43,8 @@
             <div class="absolute inset-0 bg-gradient-to-t from-surface-primary via-transparent to-transparent"></div>
           </div>
           <div class="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-surface-secondary border border-border-subtle p-4 md:p-6">
-            <p class="font-mono text-label text-ink-tertiary">Currently at</p>
-            <p class="font-display text-body-lg text-ink-primary">FamilySearch</p>
+            <p class="font-mono text-label text-ink-tertiary">Founder</p>
+            <p class="font-display text-body-lg text-ink-primary">Weiss Solutions</p>
           </div>
         </div>
       </div>
@@ -137,11 +137,11 @@
             <div class={"scroll-fade #{if index == 0, do: "md:col-span-2"}"} style={"transition-delay: #{index * 100}ms"}>
               <%= if Map.get(project.links, :live) do %>
                 <a href={project.links.live} target="_blank" rel="noopener noreferrer" class="block project-card group">
-                  <div class={"relative overflow-hidden #{if index == 0, do: "aspect-[16/9]", else: "aspect-[4/3]"}"}>
+                  <div class={"relative overflow-hidden bg-surface-tertiary #{if index == 0, do: "aspect-[16/9]", else: "aspect-[4/3]"}"}>
                     <img
                       src={project.image}
                       alt={project.title}
-                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                     />
                     <div class="project-card-content">
                       <p class="font-mono text-label text-accent-warm mb-2"><%= project.category %></p>
@@ -157,11 +157,11 @@
                 </a>
               <% else %>
                 <div class="project-card">
-                  <div class={"relative overflow-hidden #{if index == 0, do: "aspect-[16/9]", else: "aspect-[4/3]"}"}>
+                  <div class={"relative overflow-hidden bg-surface-tertiary #{if index == 0, do: "aspect-[16/9]", else: "aspect-[4/3]"}"}>
                     <img
                       src={project.image}
                       alt={project.title}
-                      class="w-full h-full object-cover"
+                      class="w-full h-full object-contain"
                     />
                     <div class="project-card-content">
                       <p class="font-mono text-label text-accent-warm mb-2"><%= project.category %></p>
@@ -283,7 +283,7 @@
         Open to new opportunities and interesting projects. Whether you have a question or just want to say hello, I'll get back to you.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="mailto:mikaelweiss@icloud.com" class="btn-primary">
+        <a href="mailto:mikael.weiss@weisssolutions.org" class="btn-primary">
           Start a Conversation
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
