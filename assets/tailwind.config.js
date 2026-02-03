@@ -85,12 +85,7 @@ module.exports = {
       animation: {
         'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'fade-in': 'fadeIn 0.6s ease-out forwards',
-        'slide-in-right': 'slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'scale-in': 'scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'marquee': 'marquee 30s linear infinite',
-        'marquee-reverse': 'marquee 30s linear infinite reverse',
-        'grain': 'grain 8s steps(10) infinite',
-        'pulse-slow': 'pulse 4s ease-in-out infinite',
       },
       keyframes: {
         fadeUp: {
@@ -101,29 +96,9 @@ module.exports = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        slideInRight: {
-          '0%': { opacity: '0', transform: 'translateX(-60px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
         scaleIn: {
           '0%': { opacity: '0', transform: 'scale(0.9)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
-        },
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        grain: {
-          '0%, 100%': { transform: 'translate(0, 0)' },
-          '10%': { transform: 'translate(-5%, -10%)' },
-          '20%': { transform: 'translate(-15%, 5%)' },
-          '30%': { transform: 'translate(7%, -25%)' },
-          '40%': { transform: 'translate(-5%, 25%)' },
-          '50%': { transform: 'translate(-15%, 10%)' },
-          '60%': { transform: 'translate(15%, 0%)' },
-          '70%': { transform: 'translate(0%, 15%)' },
-          '80%': { transform: 'translate(3%, 35%)' },
-          '90%': { transform: 'translate(-10%, 10%)' },
         },
       },
       transitionTimingFunction: {
@@ -134,15 +109,6 @@ module.exports = {
         '400': '400ms',
         '600': '600ms',
         '800': '800ms',
-      },
-      backgroundImage: {
-        'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-      },
-      boxShadow: {
-        'glow': '0 0 60px -12px rgba(255, 107, 53, 0.4)',
-        'glow-lg': '0 0 100px -20px rgba(255, 107, 53, 0.5)',
-        'inner-glow': 'inset 0 0 60px -12px rgba(255, 107, 53, 0.15)',
       },
     },
   },

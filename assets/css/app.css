@@ -23,12 +23,6 @@
 
   .card-brutal {
     @apply bg-surface-secondary border border-border-subtle;
-    @apply transition-all duration-400 ease-out-expo;
-  }
-
-  .card-brutal:hover {
-    @apply border-accent-warm/50 shadow-glow;
-    transform: translateY(-4px);
   }
 
   .link-underline {
@@ -49,62 +43,28 @@
     @apply inline-flex items-center gap-3 px-8 py-4;
     @apply bg-accent-warm text-surface-primary font-display font-semibold;
     @apply border-2 border-accent-warm;
-    @apply transition-all duration-300 ease-out-expo;
+    @apply transition-colors duration-200;
   }
 
   .btn-primary:hover {
-    @apply bg-transparent text-accent-warm;
-    transform: translateY(-2px);
+    @apply bg-accent-warm-light;
   }
 
   .btn-outline {
     @apply inline-flex items-center gap-3 px-8 py-4;
     @apply bg-transparent text-ink-primary font-display font-semibold;
     @apply border-2 border-border-strong;
-    @apply transition-all duration-300 ease-out-expo;
+    @apply transition-colors duration-200;
   }
 
   .btn-outline:hover {
     @apply border-accent-warm text-accent-warm;
-    transform: translateY(-2px);
-  }
-
-  .project-card {
-    @apply relative overflow-hidden;
-    @apply bg-surface-secondary border border-border-subtle;
-  }
-
-  .project-card::before {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-t from-surface-primary/90 via-surface-primary/40 to-transparent;
-    @apply opacity-0 transition-opacity duration-500;
-    z-index: 1;
-  }
-
-  .project-card:hover::before {
-    @apply opacity-100;
-  }
-
-  .project-card-content {
-    @apply absolute inset-x-0 bottom-0 p-8;
-    @apply translate-y-4 opacity-0;
-    @apply transition-all duration-500 ease-out-expo;
-    z-index: 2;
-  }
-
-  .project-card:hover .project-card-content {
-    @apply translate-y-0 opacity-100;
   }
 
   .skill-tag {
     @apply inline-flex items-center px-4 py-2;
     @apply bg-surface-tertiary border border-border-subtle;
     @apply font-mono text-body-sm text-ink-secondary;
-    @apply transition-all duration-300;
-  }
-
-  .skill-tag:hover {
-    @apply border-accent-warm text-accent-warm;
   }
 
   .timeline-item {
@@ -113,44 +73,22 @@
 
   .timeline-item::before {
     content: '';
-    @apply absolute left-0 top-2 w-3 h-3 rounded-full;
+    @apply absolute left-0 top-2 w-2 h-2 rounded-full;
     @apply bg-accent-warm;
-    box-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
   }
 
   .timeline-item::after {
     content: '';
-    @apply absolute left-[5px] top-6 w-px h-full;
-    @apply bg-gradient-to-b from-accent-warm/50 to-transparent;
+    @apply absolute left-[3px] top-5 w-px h-full;
+    @apply bg-border-subtle;
   }
 
   .timeline-item:last-child::after {
     @apply hidden;
   }
 
-  .marquee-track {
-    @apply flex gap-12 whitespace-nowrap;
-    animation: marquee 40s linear infinite;
-  }
-
-  .marquee-track:hover {
-    animation-play-state: paused;
-  }
-
   .stat-box {
-    @apply relative p-8 bg-surface-secondary border border-border-subtle;
-  }
-
-  .stat-box::before {
-    content: '';
-    @apply absolute top-0 left-0 w-full h-1 bg-accent-warm;
-    transform: scaleX(0);
-    transform-origin: left;
-    @apply transition-transform duration-600 ease-out-expo;
-  }
-
-  .stat-box:hover::before {
-    transform: scaleX(1);
+    @apply relative p-6 bg-surface-secondary border border-border-subtle;
   }
 
   .prose-editorial {
@@ -201,28 +139,6 @@
   .mask-fade-edges {
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  }
-
-  .hover-lift {
-    @apply transition-transform duration-400 ease-out-expo;
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-8px);
-  }
-
-  .image-grain {
-    position: relative;
-  }
-
-  .image-grain::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.08;
-    pointer-events: none;
-    mix-blend-mode: overlay;
   }
 
   .border-gradient {

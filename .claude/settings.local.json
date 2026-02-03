@@ -12,7 +12,8 @@
       "Bash(ls:*)",
       "mcp__peekaboo__list",
       "Bash(magick:*)",
-      "Bash(mix compile:*)"
+      "Bash(mix compile:*)",
+      "mcp__plugin_linear_linear__list_issues"
     ],
     "deny": []
   }
