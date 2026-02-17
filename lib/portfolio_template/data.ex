@@ -70,6 +70,11 @@ defmodule PortfolioTemplate.Data do
             "proficiency": 60
           },
           {
+            "name": "Elixir/Phoenix",
+            "years": "1 year",
+            "proficiency": 65
+          },
+          {
             "name": "Supabase",
             "years": "1 year",
             "proficiency": 70
@@ -127,6 +132,14 @@ defmodule PortfolioTemplate.Data do
     ],
     "projects": {
       "featured": [
+        {
+          "title": "Lunch Ninja",
+          "category": "Web App",
+          "image": "/images/lunchninja.png",
+          "description": "Campus community platform that randomly pairs professors and students for weekly lunch. Passwordless magic-link auth, smart matching algorithm, and multi-tenant architecture built for universities.",
+          "technologies": ["Elixir", "Phoenix", "LiveView", "Supabase"],
+          "links": {}
+        },
         {
           "title": "Open Chat",
           "category": "Desktop App",
