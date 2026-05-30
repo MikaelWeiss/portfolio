@@ -47,7 +47,7 @@
   }
 
   .btn-primary:hover {
-    @apply bg-accent-warm-light;
+    @apply bg-accent-warmLight;
   }
 
   .btn-outline {
