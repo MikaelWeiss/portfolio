@@ -3,8 +3,8 @@ defmodule PortfolioTemplate.Data do
   {
     "personal": {
       "name": "Mikael Weiss",
-      "title": "iOS Developer • Entrepreneur • Pilot",
-      "expertise": ["Swift", "SwiftUI", "SwiftData", "Voice AI"],
+      "title": "Full-Stack Software Engineer • Pilot • Entrepreneur",
+      "expertise": ["React", "TypeScript", "Swift", "Linux"],
       "images": {
         "profile": "/images/profile.jpg",
         "about": "/images/about.jpg"
@@ -33,7 +33,7 @@ defmodule PortfolioTemplate.Data do
       ]
     },
     "about": {
-      "description": "iOS Developer with 5+ years of experience building innovative mobile applications. Led technical teams, architected complex real-time AI voice systems, and shipped 5+ iOS apps with 1,500+ downloads. Expert in SwiftUI, code architecture, and AI-augmented development workflows.",
+      "description": "Software engineer with five years shipping production systems across mobile, desktop, web, and Linux. I build interactive systems that span the full development flow — from services hosted on Linux to frontend web, mobile, and desktop apps — using an extensive array of agentic engineering tools and curated AI workflows that produce predictable, high-quality output.",
       "stats": [
         {
           "value": "5+",
@@ -47,98 +47,106 @@ defmodule PortfolioTemplate.Data do
     },
     "skills": {
       "frontend": {
-        "title": "iOS Development",
+        "title": "Frontend",
         "items": [
-          {
-            "name": "SwiftUI",
-            "years": "5 years",
-            "proficiency": 100
-          },
-          {
-            "name": "UIKit",
-            "years": "3 years",
-            "proficiency": 80
-          }
+          { "name": "React" },
+          { "name": "TypeScript" },
+          { "name": "JavaScript" },
+          { "name": "HTML" },
+          { "name": "CSS" },
+          { "name": "TailwindCSS" },
+          { "name": "Vite" },
+          { "name": "Electron" },
+          { "name": "Phoenix" },
+          { "name": "WCAG Accessibility" }
         ]
       },
       "backend": {
-        "title": "Backend & Tools",
+        "title": "Languages & Systems",
         "items": [
-          {
-            "name": "Python/FastAPI",
-            "years": "1 year",
-            "proficiency": 60
-          },
-          {
-            "name": "Elixir/Phoenix",
-            "years": "1 year",
-            "proficiency": 65
-          },
-          {
-            "name": "Supabase",
-            "years": "1 year",
-            "proficiency": 70
-          }
+          { "name": "Swift" },
+          { "name": "Elixir/Phoenix" },
+          { "name": "Python/FastAPI" },
+          { "name": "Rust" },
+          { "name": "Linux" },
+          { "name": "Bash/ZSH" },
+          { "name": "Systemd" },
+          { "name": "Automation" },
+          { "name": "rsync" },
+          { "name": "restic" }
         ]
       },
       "other": {
-        "title": "Other Skills",
-        "items": ["Voice AI Integration", "OpenAI APIs", "SwiftData", "WCAG Accessibility", "Clean Architecture", "Team Leadership", "Spanish"]
+        "title": "Hardware & AI",
+        "items": ["Raspberry Pi", "Soldering", "AI Skills", "Coding Harnesses", "MCP", "ACP", "Multi-Agent Orchestration", "Simplicity"]
       }
     },
     "experience": [
       {
-        "title": "Lead Developer",
-        "company": "OpSync Services LLC",
-        "period": "Mar 2025 - Nov 2025",
+        "title": "Founder & Lead Developer",
+        "company": "Weiss Solutions LLC",
+        "period": "Jul 2024 - Present",
         "description": [
-          "Built iOS and Android app for pest control technicians with AI chatbot and voice-to-voice role-play",
-          "Solved complex PCM audio streaming challenge for real-time OpenAI TTS integration",
-          "Led remote team of 3, established CI/CD with Xcode Cloud, deployed updates 1-2x weekly"
+          "Shipped Strive Planner, a full-stack app with calendar and time tracking, goal-setting, and reflection systems across iOS, macOS, web, and a Phoenix/Elixir backend with full real-time sync (Android coming soon)",
+          "Architected a software development lifecycle balancing predictability, quality, and speed through a careful selection of AI tooling",
+          "Shipped the mobile and desktop app Open Chat, plus desktop apps Timbre and Splash Screen"
         ],
-        "technologies": ["SwiftUI", "Voice AI", "OpenAI", "Python", "Supabase"]
+        "technologies": ["Swift", "SwiftUI", "Elixir", "Phoenix", "Rust"]
       },
       {
-        "title": "iOS Developer Intern",
+        "title": "Software Engineer (Contract)",
+        "company": "AskElephant (Remote)",
+        "period": "Jan 2026 - Apr 2026",
+        "description": [
+          "Developed a shared npm dictation library used across multiple AskElephant products, with snippet and audio pipelines",
+          "Shipped the Flux and Peanut dictation apps: React, TypeScript, Tailwind, and Shadcn frontend with OpenAI speech-to-text",
+          "Refactored a 6,000-line TypeScript file into a properly structured Electron app following common conventions"
+        ],
+        "technologies": ["React", "TypeScript", "Electron", "Tailwind", "OpenAI"]
+      },
+      {
+        "title": "CTO / Lead Developer",
+        "company": "OpSync Services (Remote)",
+        "period": "Feb 2025 - Oct 2025",
+        "description": [
+          "First engineer and technical lead; grew and led a team of a web developer and a mobile intern across the full stack",
+          "Curated agentic engineering systems that produced production-ready software across the development lifecycle",
+          "Architected the product across a React web frontend, FastAPI backend, Supabase database, and multiple AI integrations"
+        ],
+        "technologies": ["React", "Python", "FastAPI", "Supabase", "Voice AI"]
+      },
+      {
+        "title": "Software Engineer",
         "company": "FamilySearch",
         "period": "Jan 2025 - Apr 2025",
         "description": [
-          "Modernized Swift code to use async/await affecting 10,000+ lines of code, fixing 100+ related bugs",
-          "Enhanced WCAG accessibility fixing 100+ related issues affecting thousands of customers daily"
+          "Fixed 100+ WCAG accessibility issues across a product serving thousands of daily users",
+          "Modernized 10,000+ lines of code to async/await, fixing 100+ concurrency-related bugs"
         ],
         "technologies": ["Swift", "Async/Await", "Accessibility"]
       },
       {
-        "title": "Founder & Lead iOS Developer",
-        "company": "Weiss Solutions LLC",
-        "period": "Oct 2023 - Present",
+        "title": "Software / App Developer (Contract)",
+        "company": "Bryce Labs, High Country Living, Elements Financial, Pastimes",
+        "period": "2020 - 2025",
         "description": [
-          "Launched 5+ iOS apps for clients including High Country Living, Bryce Labs, and AskElephant",
-          "Developed Strive Planner iOS app: 2,000+ downloads, 5-star rating",
-          "Created reusable architecture system for rapidly building new iOS apps with consistent quality"
+          "Built greenfield products from client descriptions and mock-ups, developing and releasing 5+ apps"
         ],
-        "technologies": ["SwiftUI", "SwiftData", "Clean Architecture"]
-      },
-      {
-        "title": "iOS App Developer",
-        "company": "Elements Financial",
-        "period": "Aug 2020 - Jun 2021",
-        "description": [
-          "Collaborated with cross-functional team including designers, developers, and marketing",
-          "Started as unpaid intern and ended as contractor"
-        ],
-        "technologies": ["Swift", "iOS", "UIKit"]
+        "technologies": ["Swift", "SwiftUI", "iOS"]
       }
     ],
     "projects": {
       "featured": [
         {
-          "title": "Lunch Ninja",
+          "title": "Strive Planner",
           "category": "Web App",
-          "image": "/images/lunchninja.png",
-          "description": "Campus community platform that randomly pairs professors and students for weekly lunch. Passwordless magic-link auth, smart matching algorithm, and multi-tenant architecture built for universities.",
-          "technologies": ["Elixir", "Phoenix", "LiveView", "Supabase"],
-          "links": {}
+          "image": "/images/strive-website.png",
+          "description": "Full-stack productivity platform built for intentional living — calendar and time tracking, goal-setting, and daily reflection. Native iOS and macOS apps, a web app, and a Phoenix/Elixir backend with real-time sync across every device (Android coming soon).",
+          "technologies": ["Swift", "Elixir", "Phoenix"],
+          "links": {
+            "live": "https://striveplanner.app",
+            "website": "https://striveplanner.app"
+          }
         },
         {
           "title": "Open Chat",
@@ -170,7 +178,7 @@ defmodule PortfolioTemplate.Data do
           "technologies": ["SwiftUI", "SwiftData", "iOS"],
           "links": {
             "live": "https://apps.apple.com/us/app/strive-planner/id6472100413",
-            "website": "https://striveplanner.org"
+            "website": "https://striveplanner.app"
           }
         },
         {
