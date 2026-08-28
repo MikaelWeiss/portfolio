@@ -1,200 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mikael Weiss - Resume</title>
     <style>
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    html,
-    body {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    }
+      html,
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
 
-    body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 10pt;
-    line-height: 1.33;
-    color: #333;
-    background: #e2e8f0;
-    }
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 10pt;
+        line-height: 1.33;
+        color: #333;
+        background: #e2e8f0;
+      }
 
-    .page {
-    width: 8.5in;
-    height: 11in;
-    padding: 0.4in;
-    margin: 0.25in auto;
-    background: #fff;
-    box-shadow: 0 0 0.25in rgba(0, 0, 0, 0.25);
-    }
+      .page {
+        width: 8.5in;
+        height: 11in;
+        padding: 0.4in;
+        margin: 0.25in auto;
+        background: #fff;
+        box-shadow: 0 0 0.25in rgba(0, 0, 0, 0.25);
+      }
 
-    @page {
-    size: letter;
-    margin: 0;
-    }
+      @page {
+        size: letter;
+        margin: 0;
+      }
 
-    @media print {
-    body {
-    background: #fff;
-    }
+      @media print {
+        body {
+          background: #fff;
+        }
 
-    .page {
-    width: auto;
-    height: auto;
-    margin: 0;
-    box-shadow: none;
-    }
-    }
+        .page {
+          width: auto;
+          height: auto;
+          margin: 0;
+          box-shadow: none;
+        }
+      }
 
-    header {
-    text-align: center;
-    margin-bottom: 6px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #2563eb;
-    }
+      header {
+        text-align: center;
+        margin-bottom: 6px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #2563eb;
+      }
 
-    h1 {
-    font-size: 22pt;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 3px;
-    }
+      h1 {
+        font-size: 22pt;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 3px;
+      }
 
-    .title {
-    font-size: 11pt;
-    color: #64748b;
-    margin-bottom: 7px;
-    }
+      .title {
+        font-size: 11pt;
+        color: #64748b;
+        margin-bottom: 7px;
+      }
 
-    .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    font-size: 10pt;
-    }
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        font-size: 10pt;
+      }
 
-    .contact-links a {
-    color: #2563eb;
-    text-decoration: none;
-    }
+      .contact-links a {
+        color: #2563eb;
+        text-decoration: none;
+      }
 
-    section {
-    margin-bottom: 4px;
-    }
+      section {
+        margin-bottom: 4px;
+      }
 
-    h2 {
-    font-size: 12pt;
-    font-weight: 700;
-    color: #1e293b;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 2px;
-    margin-bottom: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    }
+      h2 {
+        font-size: 12pt;
+        font-weight: 700;
+        color: #1e293b;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 2px;
+        margin-bottom: 3px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
 
-    .summary {
-    font-size: 10.5pt;
-    color: #475569;
-    }
+      .summary {
+        font-size: 10.5pt;
+        color: #475569;
+      }
 
-    .entry {
-    margin-bottom: 4px;
-    }
+      .entry {
+        margin-bottom: 4px;
+      }
 
-    .entry-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 2px;
-    }
+      .entry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2px;
+      }
 
-    .entry-title {
-    font-weight: 600;
-    font-size: 11pt;
-    color: #1e293b;
-    }
+      .entry-title {
+        font-weight: 600;
+        font-size: 11pt;
+        color: #1e293b;
+      }
 
-    .entry-period {
-    font-size: 10pt;
-    color: #64748b;
-    white-space: nowrap;
-    padding-left: 12px;
-    }
+      .entry-period {
+        font-size: 10pt;
+        color: #64748b;
+        white-space: nowrap;
+        padding-left: 12px;
+      }
 
-    .entry-subtitle {
-    font-size: 10.5pt;
-    color: #2563eb;
-    margin-bottom: 4px;
-    }
+      .entry-subtitle {
+        font-size: 10.5pt;
+        color: #2563eb;
+        margin-bottom: 4px;
+      }
 
-    .entry-description {
-    font-size: 10pt;
-    color: #475569;
-    }
+      .entry-description {
+        font-size: 10pt;
+        color: #475569;
+      }
 
-    .entry-description ul {
-    margin-left: 16px;
-    }
+      .entry-description ul {
+        margin-left: 16px;
+      }
 
-    .entry-description li {
-    margin-bottom: 1px;
-    }
+      .entry-description li {
+        margin-bottom: 1px;
+      }
 
-    .skills-inline {
-    font-size: 10pt;
-    color: #475569;
-    }
+      .skills-inline {
+        font-size: 10pt;
+        color: #475569;
+      }
 
-    .skills-inline p {
-    margin-bottom: 3px;
-    }
+      .skills-inline p {
+        margin-bottom: 3px;
+      }
 
-    .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
 
-    .project {
-    padding: 7px;
-    background: #f8fafc;
-    border-radius: 4px;
-    }
+      .project {
+        padding: 7px;
+        background: #f8fafc;
+        border-radius: 4px;
+      }
 
-    .project-title {
-    font-weight: 600;
-    font-size: 10.5pt;
-    color: #1e293b;
-    }
+      .project-title {
+        font-weight: 600;
+        font-size: 10.5pt;
+        color: #1e293b;
+      }
 
-    .project-tech {
-    font-size: 9pt;
-    color: #2563eb;
-    margin-bottom: 2px;
-    }
+      .project-tech {
+        font-size: 9pt;
+        color: #2563eb;
+        margin-bottom: 2px;
+      }
 
-    .project-description {
-    font-size: 9.5pt;
-    color: #475569;
-    }
+      .project-description {
+        font-size: 9.5pt;
+        color: #475569;
+      }
     </style>
   </head>
   <body>
     <div class="page">
       <header>
         <h1>Mikael Weiss</h1>
-        <p class="title">Full-Stack Software Engineer • Frontend, Backend, Linux</p>
+        <p class="title">Native iOS Engineer & Entrepreneur</p>
         <div class="contact-links">
           <span>307-226-5183</span>
-          <a href="mailto:mikael.weiss@weisssolutions.org">mikael.weiss@weisssolutions.org</a>
-          <a href="https://www.linkedin.com/in/mikael-weiss/">linkedin:mikael-weiss</a>
+          <a href="mailto:mikael.weiss@weisssolutions.org"
+            >mikael.weiss@weisssolutions.org</a
+          >
+          <a href="https://www.linkedin.com/in/mikael-weiss/"
+            >linkedin:mikael-weiss</a
+          >
           <a href="https://github.com/MikaelWeiss">github:MikaelWeiss</a>
         </div>
       </header>
@@ -202,7 +206,13 @@
       <section>
         <h2>Summary</h2>
         <p class="summary">
-          Software engineer with five years shipping production systems across mobile, desktop, web, and Linux. I make interactive systems that span the development flow from services hosted on Linux, to frontend web, mobile, and desktop applications. I build using an extensive array of agentic engineering tools including Claude Code, Cursor, Codex, and Pi.dev. I orchestrate agent systems that produce predictable, high-quality outputs regardless of the coding harness used. These systems include a curated set of skills, hooks, mcps, and plugins that facilitate the AI.
+          Native iOS developer with 6+ years of experience shipping production
+          systems across iOS, web, Android, desktop and Linux. I build
+          interactive software, resiliant architecture, and development
+          workflows. I build using a mix of agentic engineering tools and
+          systems that allow me to orchestrate workflows across the software
+          development lifecycle. I orchestrate agentic systems that produce
+          predictable, high-quality outputs, scalable outputs.
         </p>
       </section>
 
@@ -217,40 +227,41 @@
           <div class="entry-subtitle">Weiss Solutions LLC</div>
           <div class="entry-description">
             <ul>
-              <li>Shipped "Strive Planner" full-stack app including calendar and time tracking, goal-setting, and reflection systems</li>
-              <li>Architected a software development lifecycle with predictability, quality, and speed with a careful selection of AI tooling</li>
-              <li>Delivered a refined user experience with attention to detail and focus on the user; Shipped Strive Planner an iOS and macOS app, Phoenix and Elixir backend, web app, and Android coming soon; full real-time sync across all platforms</li>
-              <li>Shipped mobile and desktop application "Open Chat"; shipped desktop app "Timbre" and desktop app "Splash Screen"</li>
+              <li>
+                Shipped "Strive Planner" full-stack app including calendar goal
+                setting app with colaborative cross user real-time sync
+              </li>
+              <li>
+                Architected a software development lifecycle with
+                predictability, quality, and speed that has scaled quite
+                wonderfly
+              </li>
+              <li>
+                Shipped mobile and desktop application "Open Chat"; shipped
+                desktop app "Timbre" and desktop app "Splash Screen"
+              </li>
+              <li>
+                Shipped open source agentic orchestration system and workflow
+                builder "Penguin" as a cross-platform desktop app
+              </li>
             </ul>
           </div>
         </div>
 
         <div class="entry">
           <div class="entry-header">
-            <span class="entry-title">Software Engineer (Contract)</span>
-            <span class="entry-period">Jan 2026 - Apr 2026</span>
+            <span class="entry-title">Software / App Developer (Contract)</span>
+            <span class="entry-period">2020 - 2025</span>
           </div>
-          <div class="entry-subtitle">AskElephant (Remote)</div>
+          <div class="entry-subtitle">
+            Bryce Labs, High Country Living, Elements Financial, Pastimes
+          </div>
           <div class="entry-description">
             <ul>
-              <li>Developed shared npm library for dictation used between multiple AskElephant products with snippet and audio pipelines</li>
-              <li>Shipped Flux and Peanut dictation apps: React, TypeScript, Tailwind, Shadcn frontend, and OpenAI speech-to-text API</li>
-              <li>Refactored 6,000 line TypeScript file into a properly structured Electron app following common conventions and structure</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="entry">
-          <div class="entry-header">
-            <span class="entry-title">CTO / Lead Developer</span>
-            <span class="entry-period">Feb 2025 - Oct 2025</span>
-          </div>
-          <div class="entry-subtitle">OpSync Services (Remote)</div>
-          <div class="entry-description">
-            <ul>
-              <li>First engineer and technical lead; grew and led a team of a web developer and a mobile intern; full-stack software</li>
-              <li>Curated agentic engineering systems that led to production-ready software across the software development lifecycle</li>
-              <li>Architected the software across React web frontend, FastAPI backend, Supabase database, and multiple AI integrations</li>
+              <li>
+                Built greenfield products products from client descriptions and
+                provided mock-ups; developed and release of 5+ apps
+              </li>
             </ul>
           </div>
         </div>
@@ -263,21 +274,62 @@
           <div class="entry-subtitle">FamilySearch</div>
           <div class="entry-description">
             <ul>
-              <li>Fixed 100+ WCAG accessibility issues across a product serving thousands of daily users</li>
-              <li>Modernized 10,000+ lines of code to async/await, fixing 100+ concurrency-related bugs</li>
+              <li>
+                Fixed 100+ WCAG accessibility issues across an iOS application
+                serving thousands of daily users across the globe
+              </li>
+              <li>
+                Modernized 5,000+ lines of code to async/await, resolving many
+                concurrency-related bugs and simplifying the codebase
+              </li>
             </ul>
           </div>
         </div>
 
         <div class="entry">
           <div class="entry-header">
-            <span class="entry-title">Software / App Developer (Contract)</span>
-            <span class="entry-period">2020 - 2025</span>
+            <span class="entry-title">CTO / Lead Developer</span>
+            <span class="entry-period">Feb 2025 - Oct 2025</span>
           </div>
-          <div class="entry-subtitle">Bryce Labs, High Country Living, Elements Financial, Pastimes</div>
+          <div class="entry-subtitle">OpSync Services</div>
           <div class="entry-description">
             <ul>
-              <li>Built greenfield products products from client descriptions and provided mock-ups; developed and release of 5+ apps</li>
+              <li>
+                First engineer and technical lead; grew and led a team of a web
+                developer and a mobile intern; full-stack software
+              </li>
+              <li>
+                Curated agentic engineering systems that led to production-ready
+                software across the software development lifecycle
+              </li>
+              <li>
+                Architected the software across React web frontend, FastAPI
+                backend, Supabase database, and multiple AI integrations
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Software Engineer (Contract)</span>
+            <span class="entry-period">Jan 2026 - Apr 2026</span>
+          </div>
+          <div class="entry-subtitle">AskElephant</div>
+          <div class="entry-description">
+            <ul>
+              <li>
+                Developed shared npm library for dictation used between multiple
+                AskElephant products with snippet and audio pipelines
+              </li>
+              <li>
+                Shipped Flux and Peanut dictation apps: React, TypeScript,
+                Tailwind, Shadcn frontend, and OpenAI speech-to-text API
+              </li>
+              <li>
+                Refactored 6,000 line TypeScript file into a properly structured
+                Electron app following common conventions and structure
+              </li>
             </ul>
           </div>
         </div>
@@ -286,9 +338,18 @@
       <section>
         <h2>Skills</h2>
         <div class="skills-inline">
-          <p><strong>Frontend:</strong> React, TypeScript, JavaScript, HTML, CSS, TailwindCSS, Vite, accessible (WCAG) compliance, Electron, Phoenix</p>
-          <p><strong>Software Languages:</strong> Swift, Elixir/Phoenix, Python/FastAPI, Rust, Linux, Bash, ZSH, Systemd, automation, rsync, restic</p>
-          <p><strong>Hardware &amp; AI:</strong> Raspberry Pi, Soldering, AI Skills, Coding Harnesses, MCP, ACP, multi-agent orchestration, simplicity</p>
+          <p>
+            <strong>Frontend:</strong> Swift, SwiftUI, UIKit, React, TypeScript,
+            HTML, CSS, accessible (WCAG) compliance, Electron, Phoenix
+          </p>
+          <p>
+            <strong>Software Languages:</strong> Swift, Erlang, Elixir, Python,
+            Rust, Bash, ZSH, TypeScript
+          </p>
+          <p>
+            <strong>Leadership:</strong> Technical Architecture, Team
+            Management, Code Reviews, Mentoring, Process Implementation
+          </p>
         </div>
       </section>
 
@@ -301,16 +362,24 @@
           </div>
           <div class="entry-subtitle">Brigham Young University - Idaho</div>
           <div class="entry-description">
-            <p>3.9 GPA &nbsp;•&nbsp; President, Mobile Computing Society &nbsp;•&nbsp; VP, Computing Society, &nbsp;•&nbsp; Team Leadership</p>
+            <p>
+              3.9 GPA &nbsp;•&nbsp; President, Mobile Computing Society
+              &nbsp;•&nbsp; VP, Computing Society, &nbsp;•&nbsp; Team Leadership
+            </p>
           </div>
         </div>
         <div class="entry">
           <div class="entry-header">
-            <span class="entry-title">Volunteer Service (Spanish-speaking)</span>
+            <span class="entry-title"
+              >Volunteer Service (Spanish-speaking)</span
+            >
             <span class="entry-period">Oct 2021 - Oct 2023</span>
           </div>
           <div class="entry-description">
-            <p>Led and trained teams of 10-20 volunteers; developed the goal-setting systems later built into Strive Planner</p>
+            <p>
+              Led and trained teams of 10-20 volunteers; developed the
+              goal-setting systems later built into Strive Planner
+            </p>
           </div>
         </div>
       </section>
